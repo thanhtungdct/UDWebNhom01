@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+@if (Session["User"] != null)
+{
+
+    <div style="height:35px;width:360px;float:right;margin-top:15px;color:white">
+      Chào @Session["Name"]  <a href="@Url.Action("Logout","Login")" style="margin-left:10px">Đăng Xuất</a>
+    </div>
+}
+else
+{  
+    <form action="/Login/Login/" method="post">
+        <div style="height:35px;width:650px;float:right;margin-top:10px">
+            <ul class="nav navbar-nav">               
+                <li>                    
+                    <input type="text" name="Username" placeholder="Tài khoản..." style="width:150px;height:35px; padding-left:5px" />
+                </li>
+                <li>
+                    <input type="password" name="Password" placeholder="Mật khẩu..." style="width:150px;height:35px; margin-left:2px; padding-left:5px " />
+                </li>
+                <li>
+                    <input type="submit" value=""  style="background-image:url(../../Images/Layout/iconLogin.png);width:85px;height:35px; margin-left:3px"  />                                   
+                    <a href="@Url.Action("register","login")"><img src="../../Images/Layout/iconRegister.png" style="width: 70px; height: 35px; margin-top:-87px;margin-left:77px;" /></a>                                        
+                </li>
+                @if (TempData["IsLogin"] == "Fail")
+                {
+                    <li style="color:red;width:180px; float:left; margin-left: 500px; margin-top:-85px; font-family:cursive">Thông tin không đúng</li>
+                }
+            </ul>
+        </div>
+    </form>
+
+}

@@ -1,0 +1,40 @@
+﻿@model MvcFastFood.FastFoodServiceWeb.Product
+
+@{
+    ViewBag.Title = "getProductByID";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết sản phẩm</h2>
+<div class="row">
+    @if (@Model.Image != null)
+        {
+            string base64String = Convert.ToBase64String(@Model.Image, 0, @Model.Image.Length);
+            string image = string.Format("data:image/png;base64," + base64String);
+
+            <div class="col-sm-4 col-lg-4 col-md-4">
+                <div class="thumbnail">
+                    <img src="@image" alt=" ">
+                    <div class=" caption">
+                        <h4 class="pull-right">@string.Format("{0:0,0 VND}", @Model.UnitPrice)</h4>
+                        <h4>
+                            <a href="">@Model.ProductName</a>
+                        </h4>
+                        <p>@Model.Description</p>
+                    </div>
+                    <div><a href="@Url.Action("AddCart", "MyCart", new { productID = @Model.ProductID})">Chọn mua</a> </div>
+                    <div class="ratings">
+                        <p class="pull-right"><a href="@Url.Action("AddCart", "MyCart", new { productID = @Model.ProductID})">Thêm vào giỏ hàng</a></p>
+                        <p>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+    }
+        </div>

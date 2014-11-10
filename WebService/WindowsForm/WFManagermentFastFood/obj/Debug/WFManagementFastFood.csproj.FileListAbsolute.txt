@@ -1,0 +1,51 @@
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\bin\Debug\WFManagermentFastFood.exe.config
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\bin\Debug\WFManagermentFastFood.exe
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\bin\Debug\WFManagermentFastFood.pdb
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\obj\Debug\WFManagementFastFood.csprojResolveAssemblyReference.cache
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.Login.resources
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.Management.resources
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.ManagementUser.resources
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.Properties.Resources.resources
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\obj\Debug\WFManagementFastFood.csproj.GenerateResource.Cache
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.exe
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.pdb
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.ManagementProducts.resources
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.ManagementCategory.resources
+C:\Users\Van\Desktop\WebService\WindowsForm\WFManagermentFastFood\bin\Debug\WFManagermentFastFood.exe.config
+C:\Users\Van\Desktop\WebService\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.exe
+C:\Users\Van\Desktop\WebService\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.pdb
+C:\Users\Van\Desktop\WebService\WindowsForm\WFManagermentFastFood\bin\Debug\WFManagermentFastFood.exe
+C:\Users\Van\Desktop\WebService\WindowsForm\WFManagermentFastFood\bin\Debug\WFManagermentFastFood.pdb
+C:\Users\Van\Desktop\WebService\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagementFastFood.csprojResolveAssemblyReference.cache
+C:\Users\Van\Desktop\WebService\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.Login.resources
+C:\Users\Van\Desktop\WebService\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.Management.resources
+C:\Users\Van\Desktop\WebService\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.ManagementCategory.resources
+C:\Users\Van\Desktop\WebService\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.ManagementProducts.resources
+C:\Users\Van\Desktop\WebService\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.ManagementUser.resources
+C:\Users\Van\Desktop\WebService\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.Properties.Resources.resources
+C:\Users\Van\Desktop\WebService\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagementFastFood.csproj.GenerateResource.Cache
+C:\Users\Van\Desktop\WebService\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.ManagementOrder.resources
+C:\Users\Van\Desktop\WebService\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.ManagementAddNewOrder.resources
+C:\Users\Van\Desktop\WebService\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.ManagementReport.resources
+C:\Users\Van\Desktop\WebService\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.FormReport.resources
+C:\Users\Van\Desktop\WebService\WindowsForm\WFManagermentFastFood\obj\Debug\RdlCompile.cache
+C:\Users\Van\Desktop\WebService\WindowsForm\WFManagermentFastFood\obj\Debug\RdlCompile.compiled
+C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WindowsForm\WFManagermentFastFood\bin\Debug\WFManagermentFastFood.exe.config
+C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WindowsForm\WFManagermentFastFood\bin\Debug\WFManagermentFastFood.exe
+C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WindowsForm\WFManagermentFastFood\bin\Debug\WFManagermentFastFood.pdb
+C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.FormReport.resources
+C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.Login.resources
+C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.Management.resources
+C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.ManagementAddNewOrder.resources
+C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.ManagementCategory.resources
+C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.ManagementOrder.resources
+C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.ManagementProducts.resources
+C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.ManagementReport.resources
+C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.ManagementUser.resources
+C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.Properties.Resources.resources
+C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagementFastFood.csproj.GenerateResource.Cache
+C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WindowsForm\WFManagermentFastFood\obj\Debug\RdlCompile.cache
+C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WindowsForm\WFManagermentFastFood\obj\Debug\RdlCompile.compiled
+C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.exe
+C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.pdb
+C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WindowsForm\WFManagermentFastFood\obj\Debug\WFManagementFastFood.csprojResolveAssemblyReference.cache

@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" />
+  <xs:element name="getAllProduct">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllProductResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="getAllProductResult" nillable="true" type="q1:ArrayOfProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="productID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="getProductByIDResult" nillable="true" type="q2:Product" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="product" nillable="true" type="q3:Product" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertProductResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insertProductResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="productID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteProductResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deleteProductResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="product" nillable="true" type="q4:Product" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateProductResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="updateProductResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="productName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="searchResult" nillable="true" type="q5:ArrayOfProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductByCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="categoryID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductByCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="getProductByCategoryResult" nillable="true" type="q6:ArrayOfProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllCategory">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="getAllCategoryResult" nillable="true" type="q7:ArrayOfCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCategoryByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="categoryID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCategoryByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="getCategoryByIDResult" nillable="true" type="q8:Category" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="category" nillable="true" type="q9:Category" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insertCategoryResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="category" nillable="true" type="q10:Category" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="updateCategoryResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deteteCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="categoryID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deteteCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deteteCategoryResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllOrder">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="getAllOrderResult" nillable="true" type="q11:ArrayOfOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOrderByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOrderByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="getOrderByIDResult" nillable="true" type="q12:Order" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="order" nillable="true" type="q13:Order" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insertOrderResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="order" nillable="true" type="q14:Order" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="updateOrderResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deteteOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deteteOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deteteOrderResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOrderByStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="status" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOrderByStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="getOrderByStatusResult" nillable="true" type="q15:ArrayOfOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertOrderDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="orderDetai" nillable="true" type="q16:OrderDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertOrderDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insertOrderDetailResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOrderDetailByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="order" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOrderDetailByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="getOrderDetailByIDResult" nillable="true" type="q17:ArrayOfOrderDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllAccount">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="getAllAccountResult" nillable="true" type="q18:ArrayOfAccount" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAccountByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAccountByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="getAccountByIDResult" nillable="true" type="q19:Account" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="account" nillable="true" type="q20:Account" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insertAccountResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="account" nillable="true" type="q21:Account" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="updateAccountResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deteteAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deteteAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deteteAccountResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="passWord" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="loginResult" nillable="true" type="q22:ArrayOfAccount" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllUserType">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllUserTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="getAllUserTypeResult" nillable="true" type="q23:ArrayOfUserType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOrderByDay">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="day" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOrderByDayResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="getOrderByDayResult" nillable="true" type="q24:ArrayOfOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOrderByMonth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="month" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOrderByMonthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="getOrderByMonthResult" nillable="true" type="q25:ArrayOfOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOrderFromDayToDay">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="from" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="to" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOrderFromDayToDayResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="getOrderFromDayToDayResult" nillable="true" type="q26:ArrayOfOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOrderByYear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOrderByYearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="getOrderByYearResult" nillable="true" type="q27:ArrayOfOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOrderByQuarterly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="quarterly" type="xs:int" />
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOrderByQuarterlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="getOrderByQuarterlyResult" nillable="true" type="q28:ArrayOfOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOrderDetailReprort">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OrderID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOrderDetailReprortResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" minOccurs="0" name="getOrderDetailReprortResult" nillable="true" type="q29:ArrayOfOrderDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

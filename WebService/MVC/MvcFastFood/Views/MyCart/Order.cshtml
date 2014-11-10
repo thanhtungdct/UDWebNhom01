@@ -1,0 +1,126 @@
+﻿@model IEnumerable<MvcFastFood.Models.Cart>
+@using MvcFastFood.FastFoodServiceWeb;
+@{
+    ViewBag.Title = "Order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@{
+    double price_ = 0;
+    double total = 0;
+}
+@if (Session["User"] != null) {
+ 
+<table>
+    <tr>
+        <td style="border-bottom:1px solid red; font-weight:bold; font-size:large" width="100px">Sản phẩm</td>
+        <td width="100px"></td>
+        <td style="border-bottom: 1px solid red; font-weight: bold; font-size: large" width="100px">Mô tả</td>
+        <td width="100px"></td>
+        <td style="border-bottom: 1px solid red; font-weight: bold; font-size: large" width="100px">Số lượng</td>
+        <td width="100px"></td>
+        <td style="border-bottom: 1px solid red; font-weight: bold; font-size: large" width="100px">Giá tiền</td>
+        <td></td>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @if (@item.Image != null)
+                {
+                    string base64String = Convert.ToBase64String(@item.Image, 0, @item.Image.Length);
+                    string image = string.Format("data:image/png;base64," + base64String);
+                    <img src="@image" />
+                }
+
+            </td>
+            <td width="100px"></td>
+            <td>
+                @Html.DisplayFor(modelItem => item.productName)
+            </td>
+            <td width="100px"></td>
+            <td>
+                @item.Quantity
+            </td>
+            <td width="100px"></td>
+            <td>
+
+                @{
+                price_ = @item.UnitPrice * @item.Quantity;
+
+                total += price_;
+                }
+
+                @string.Format("{0:0,0 vnđ}", @price_)
+            </td>
+           
+        </tr>
+    }
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Tổng tiền</td>
+        <td>@string.Format("{0:0,0 vnđ}", @total)</td>
+        <td></td>
+        
+    </tr>
+
+</table>
+<form action="/MyCart/InsertOrder/" method="post">
+    @{
+        Account acc = ViewBag.account as Account;
+    }
+
+    <h3>Thông tin khách hàng</h3>
+    <table >
+        <tr>
+            <td>Tên người nhận: </td>
+            <td><input type="text" name="name" value="@acc.Name" title="txt_field" /> </td>
+        </tr>
+        <tr>
+            <td>Email: </td>
+            <td><input name="email" type="text" title="Email"value="@acc.Email" class="txt_field" /> </td>
+
+        </tr>
+        <tr>
+            <td>Số ĐT:</td>
+            <td><input name="phone" type="text" title="Số điện thoại" value="@acc.Phone" class="txt_field" /></td>
+        </tr>
+        <tr>
+            <td>Địa chỉ: </td>
+            <td><input name="address" type="text" title="Địa chỉ" class="txt_field" value="@acc.Address" /></td>
+        </tr>       
+        <tr>
+            <td>
+                Thời gian giao hàng :
+            </td>
+            <td>
+                
+                <textarea name="note" placeholder="vui lòng nhập thời gian giao hàng" required></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="number" value="@total" name="total" style="display:none" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input name="order" type="submit" value="Đặt hàng" onclick="return kt();" /></td>
+
+        </tr>
+    </table>
+</form>
+}
+else
+{
+    <script type="text/javascript" >
+        alert("Please login !!!");
+    </script>    
+}

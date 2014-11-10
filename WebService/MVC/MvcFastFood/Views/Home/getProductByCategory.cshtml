@@ -1,0 +1,44 @@
+﻿@model IEnumerable<MvcFastFood.FastFoodServiceWeb.Product>
+
+@{
+    ViewBag.Title = "getProductByCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+    @foreach (var product in Model)
+    {
+        if (@product.Image != null)
+        {
+            string base64String = Convert.ToBase64String(@product.Image, 0, @product.Image.Length);
+            string image = string.Format("data:image/png;base64," + base64String);
+
+            <div class="col-sm-4 col-lg-4 col-md-4">
+                <div class="thumbnail">
+                    <a href="@Url.Action("getProductByID", "Home", new {productID = @product.ProductID})">
+                        <img src="@image" alt=" ">
+                    </a>
+                    <div class=" caption">
+                        <h4 class="pull-right">@string.Format("{0:0,0 VND}", @product.UnitPrice)</h4>
+                        <h4>
+                            <a href="@Url.Action("getProductByID", "Home", new {productID = @product.ProductID})">@product.ProductName</a>
+                        </h4>
+                        <p>@product.Description</p>
+                    </div>
+                    <div class="ratings">
+                        <p class="pull-right"><a href="@Url.Action("AddCart", "MyCart", new { productID = @product.ProductID})" onclick="alert('Đã thêm sản phẩm vào giỏ hàng');">Thêm vào giỏ hàng</a></p>
+                        <p>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+
+    }
+    </div>

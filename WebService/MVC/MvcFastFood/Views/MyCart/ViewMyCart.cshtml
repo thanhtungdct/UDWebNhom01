@@ -1,0 +1,92 @@
+﻿@model IEnumerable<MvcFastFood.Models.Cart>
+
+@{
+    ViewBag.Title = "ViewMyCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    double price_ = 0;
+    double total = 0;
+}
+@if (@Model.Count() > 0)
+{
+    <table>
+        <tr>
+            <td style="border-bottom:1px solid red; font-weight:bold; font-size:large" width="100px">Sản phẩm</td>
+            <td width="100px"></td>
+            <td style="border-bottom: 1px solid red; font-weight: bold; font-size: large" width="100px">Mô tả</td>
+            <td width="100px"></td>
+            <td style="border-bottom: 1px solid red; font-weight: bold; font-size: large" width="100px">Số lượng</td>
+            <td width="100px"></td>
+            <td style="border-bottom: 1px solid red; font-weight: bold; font-size: large" width="100px">Giá tiền</td>
+            <td></td>
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @if (@item.Image != null)
+                    {
+                        string base64String = Convert.ToBase64String(@item.Image, 0, @item.Image.Length);
+                        string image = string.Format("data:image/png;base64," + base64String);
+                        <img src="@image" />
+                    }
+
+                </td>
+                <td width="100px"></td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.productName)
+                </td>
+                <td width="100px"></td>
+                <td>
+
+
+                    @using (Html.BeginForm("UpdateProductInCart", "MyCart", new { productID = @item.productID }))
+                    {
+
+                        <input type="text" name="quantity" value="@item.Quantity" style="width:20px;border:none" />
+                        <input type="submit" value="" title="update" style="background: url(../images/update.png);width:15px;height:15px;border:none;" />
+                    }
+
+
+                </td>
+                <td width="100px"></td>
+                <td>
+
+                    @{
+                    price_ = @item.UnitPrice * @item.Quantity;
+
+                    total += price_;
+                    }
+
+                    @string.Format("{0:0,0 VNĐ}", @price_)
+                </td>
+                <td><a style="color:red" href="@Url.Action("deleteProduct", "MyCart", new { productID= @item.productID})" onclick="alert('Xoá sản phẩm khỏi giỏ hàng thành công')">X</a></td>
+            </tr>
+        }
+        <tr style="border-top:1px solid red">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td style="color:red; font-size:larger">Tổng tiền :</td>
+            <td>@string.Format("{0:0,0 VNĐ}", @total)</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="/Home">Tiếp tục xem sản phẩm</a></td>
+            <td></td>
+            <td><a href="@Url.Action("Order","MyCart")"><img src="../images/order.jpg" /> </a></td>
+        </tr>
+
+    </table>
+}
+else { 
+<div>
+    <h2>KHÔNG CÓ SẢN PHẨM NÀO TRONG GIỎ HÀNG . <a href="/Home/Index/">MUA HÀNG</a></h2>
+</div>
+}
+

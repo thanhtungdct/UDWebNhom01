@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b717197e790a4f23af8378321b091ec0" Name="Diagram1">
+        <EntityTypeShape EntityType="FastFoodModel.Account" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FastFoodModel.Category" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FastFoodModel.Order" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FastFoodModel.OrderDetail" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FastFoodModel.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FastFoodModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FastFoodModel.UserType" Width="1.5" PointX="1.5" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="FastFoodModel.FK_Account_UserType" ManuallyRouted="false" />
+        <AssociationConnector Association="FastFoodModel.FK_Order_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FastFoodModel.FK_Products_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="FastFoodModel.FK_OderDetail_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="FastFoodModel.FK_OderDetail_Products" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

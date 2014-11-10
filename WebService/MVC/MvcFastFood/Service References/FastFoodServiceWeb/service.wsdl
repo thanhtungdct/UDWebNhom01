@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WedMVC" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWedMVC_getAllProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllProduct" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_getAllProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_getProductByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductByID" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_getProductByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_search_InputMessage">
+    <wsdl:part name="parameters" element="tns:search" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_getProductByCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductByCategory" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_getProductByCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_getAllCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllCategory" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_getAllCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_getProductByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductByName" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_getProductByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_login_InputMessage">
+    <wsdl:part name="parameters" element="tns:login" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_getAccountByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAccountByID" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_getAccountByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAccountByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_register_InputMessage">
+    <wsdl:part name="parameters" element="tns:register" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_register_OutputMessage">
+    <wsdl:part name="parameters" element="tns:registerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_insertOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertOrder" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_insertOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_insertOrderDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertOrderDetail" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_insertOrderDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertOrderDetailResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWedMVC">
+    <wsdl:operation name="getAllProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWedMVC/getAllProduct" message="tns:IWedMVC_getAllProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWedMVC/getAllProductResponse" message="tns:IWedMVC_getAllProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWedMVC/getProductByID" message="tns:IWedMVC_getProductByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWedMVC/getProductByIDResponse" message="tns:IWedMVC_getProductByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="search">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWedMVC/search" message="tns:IWedMVC_search_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWedMVC/searchResponse" message="tns:IWedMVC_search_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductByCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWedMVC/getProductByCategory" message="tns:IWedMVC_getProductByCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWedMVC/getProductByCategoryResponse" message="tns:IWedMVC_getProductByCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWedMVC/getAllCategory" message="tns:IWedMVC_getAllCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWedMVC/getAllCategoryResponse" message="tns:IWedMVC_getAllCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWedMVC/getProductByName" message="tns:IWedMVC_getProductByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWedMVC/getProductByNameResponse" message="tns:IWedMVC_getProductByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWedMVC/login" message="tns:IWedMVC_login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWedMVC/loginResponse" message="tns:IWedMVC_login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAccountByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWedMVC/getAccountByID" message="tns:IWedMVC_getAccountByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWedMVC/getAccountByIDResponse" message="tns:IWedMVC_getAccountByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="register">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWedMVC/register" message="tns:IWedMVC_register_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWedMVC/registerResponse" message="tns:IWedMVC_register_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWedMVC/insertOrder" message="tns:IWedMVC_insertOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWedMVC/insertOrderResponse" message="tns:IWedMVC_insertOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertOrderDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWedMVC/insertOrderDetail" message="tns:IWedMVC_insertOrderDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWedMVC/insertOrderDetailResponse" message="tns:IWedMVC_insertOrderDetail_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWedMVC" type="tns:IWedMVC">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAllProduct">
+      <soap:operation soapAction="http://tempuri.org/IWedMVC/getAllProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductByID">
+      <soap:operation soapAction="http://tempuri.org/IWedMVC/getProductByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search">
+      <soap:operation soapAction="http://tempuri.org/IWedMVC/search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductByCategory">
+      <soap:operation soapAction="http://tempuri.org/IWedMVC/getProductByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllCategory">
+      <soap:operation soapAction="http://tempuri.org/IWedMVC/getAllCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductByName">
+      <soap:operation soapAction="http://tempuri.org/IWedMVC/getProductByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <soap:operation soapAction="http://tempuri.org/IWedMVC/login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountByID">
+      <soap:operation soapAction="http://tempuri.org/IWedMVC/getAccountByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="register">
+      <soap:operation soapAction="http://tempuri.org/IWedMVC/register" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertOrder">
+      <soap:operation soapAction="http://tempuri.org/IWedMVC/insertOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertOrderDetail">
+      <soap:operation soapAction="http://tempuri.org/IWedMVC/insertOrderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WedMVC">
+    <wsdl:port name="BasicHttpBinding_IWedMVC" binding="tns:BasicHttpBinding_IWedMVC">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/WCFServiceFastFood/WedMVC/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

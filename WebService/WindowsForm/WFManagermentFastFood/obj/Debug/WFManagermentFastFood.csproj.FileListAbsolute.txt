@@ -1,0 +1,11 @@
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\bin\Debug\WFManagermentFastFood.exe.config
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\bin\Debug\WFManagermentFastFood.exe
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\bin\Debug\WFManagermentFastFood.pdb
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.csprojResolveAssemblyReference.cache
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.Login.resources
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.Properties.Resources.resources
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.csproj.GenerateResource.Cache
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.exe
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.pdb
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.ManagementUser.resources
+C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WFManagermentFastFood\obj\Debug\WFManagermentFastFood.Management.resources

@@ -1,0 +1,533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FastFoodService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/WCFServiceFastFood" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFastFoodService_tong_InputMessage">
+    <wsdl:part name="parameters" element="tns:tong" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_tong_OutputMessage">
+    <wsdl:part name="parameters" element="tns:tongResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_getAllProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllProduct" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_getAllProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_getProductByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductByID" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_getProductByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_insertProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertProduct" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_insertProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_deleteProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteProduct" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_deleteProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_updateProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateProduct" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_updateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_search_InputMessage">
+    <wsdl:part name="parameters" element="tns:search" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_getProductByCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductByCategory" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_getProductByCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_getAllCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllCategory" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_getAllCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_getCategoryByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCategoryByID" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_getCategoryByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCategoryByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_insertCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertCategory" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_insertCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_updateCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateCategory" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_updateCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_deteteCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:deteteCategory" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_deteteCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deteteCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_getAllOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllOrder" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_getAllOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_getOrderByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOrderByID" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_getOrderByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOrderByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_insertOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertOrder" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_insertOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_updateOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateOrder" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_updateOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_deteteOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:deteteOrder" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_deteteOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deteteOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_insertOrderDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertOrderDetail" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_insertOrderDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertOrderDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_getOrderDetailByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOrderDetailByID" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_getOrderDetailByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOrderDetailByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_getAllAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllAccount" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_getAllAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_getAccountByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAccountByID" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_getAccountByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAccountByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_insertAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertAccount" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_insertAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_updateAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateAccount" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_updateAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_deteteAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:deteteAccount" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_deteteAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deteteAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_login_InputMessage">
+    <wsdl:part name="parameters" element="tns:login" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_getAllUserType_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllUserType" />
+  </wsdl:message>
+  <wsdl:message name="IFastFoodService_getAllUserType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllUserTypeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFastFoodService">
+    <wsdl:operation name="tong">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/tong" message="tns:IFastFoodService_tong_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/tongResponse" message="tns:IFastFoodService_tong_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/getAllProduct" message="tns:IFastFoodService_getAllProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/getAllProductResponse" message="tns:IFastFoodService_getAllProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/getProductByID" message="tns:IFastFoodService_getProductByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/getProductByIDResponse" message="tns:IFastFoodService_getProductByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/insertProduct" message="tns:IFastFoodService_insertProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/insertProductResponse" message="tns:IFastFoodService_insertProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/deleteProduct" message="tns:IFastFoodService_deleteProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/deleteProductResponse" message="tns:IFastFoodService_deleteProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/updateProduct" message="tns:IFastFoodService_updateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/updateProductResponse" message="tns:IFastFoodService_updateProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="search">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/search" message="tns:IFastFoodService_search_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/searchResponse" message="tns:IFastFoodService_search_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductByCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/getProductByCategory" message="tns:IFastFoodService_getProductByCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/getProductByCategoryResponse" message="tns:IFastFoodService_getProductByCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/getAllCategory" message="tns:IFastFoodService_getAllCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/getAllCategoryResponse" message="tns:IFastFoodService_getAllCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCategoryByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/getCategoryByID" message="tns:IFastFoodService_getCategoryByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/getCategoryByIDResponse" message="tns:IFastFoodService_getCategoryByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/insertCategory" message="tns:IFastFoodService_insertCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/insertCategoryResponse" message="tns:IFastFoodService_insertCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/updateCategory" message="tns:IFastFoodService_updateCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/updateCategoryResponse" message="tns:IFastFoodService_updateCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deteteCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/deteteCategory" message="tns:IFastFoodService_deteteCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/deteteCategoryResponse" message="tns:IFastFoodService_deteteCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/getAllOrder" message="tns:IFastFoodService_getAllOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/getAllOrderResponse" message="tns:IFastFoodService_getAllOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrderByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/getOrderByID" message="tns:IFastFoodService_getOrderByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/getOrderByIDResponse" message="tns:IFastFoodService_getOrderByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/insertOrder" message="tns:IFastFoodService_insertOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/insertOrderResponse" message="tns:IFastFoodService_insertOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/updateOrder" message="tns:IFastFoodService_updateOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/updateOrderResponse" message="tns:IFastFoodService_updateOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deteteOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/deteteOrder" message="tns:IFastFoodService_deteteOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/deteteOrderResponse" message="tns:IFastFoodService_deteteOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertOrderDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/insertOrderDetail" message="tns:IFastFoodService_insertOrderDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/insertOrderDetailResponse" message="tns:IFastFoodService_insertOrderDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrderDetailByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/getOrderDetailByID" message="tns:IFastFoodService_getOrderDetailByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/getOrderDetailByIDResponse" message="tns:IFastFoodService_getOrderDetailByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/getAllAccount" message="tns:IFastFoodService_getAllAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/getAllAccountResponse" message="tns:IFastFoodService_getAllAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAccountByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/getAccountByID" message="tns:IFastFoodService_getAccountByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/getAccountByIDResponse" message="tns:IFastFoodService_getAccountByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/insertAccount" message="tns:IFastFoodService_insertAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/insertAccountResponse" message="tns:IFastFoodService_insertAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/updateAccount" message="tns:IFastFoodService_updateAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/updateAccountResponse" message="tns:IFastFoodService_updateAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deteteAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/deteteAccount" message="tns:IFastFoodService_deteteAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/deteteAccountResponse" message="tns:IFastFoodService_deteteAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/login" message="tns:IFastFoodService_login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/loginResponse" message="tns:IFastFoodService_login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllUserType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastFoodService/getAllUserType" message="tns:IFastFoodService_getAllUserType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastFoodService/getAllUserTypeResponse" message="tns:IFastFoodService_getAllUserType_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IFastFoodService" type="tns:IFastFoodService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="tong">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/tong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllProduct">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/getAllProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductByID">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/getProductByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertProduct">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/insertProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteProduct">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/deleteProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateProduct">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/updateProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductByCategory">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/getProductByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllCategory">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/getAllCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCategoryByID">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/getCategoryByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertCategory">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/insertCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCategory">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/updateCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deteteCategory">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/deteteCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllOrder">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/getAllOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrderByID">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/getOrderByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertOrder">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/insertOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateOrder">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/updateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deteteOrder">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/deteteOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertOrderDetail">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/insertOrderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrderDetailByID">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/getOrderDetailByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllAccount">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/getAllAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountByID">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/getAccountByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertAccount">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/insertAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAccount">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/updateAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deteteAccount">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/deteteAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllUserType">
+      <soap:operation soapAction="http://tempuri.org/IFastFoodService/getAllUserType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FastFoodService">
+    <wsdl:port name="BasicHttpBinding_IFastFoodService" binding="tns:BasicHttpBinding_IFastFoodService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/WCFServiceFastFood/FastFoodService/mex/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,113 @@
+﻿@model  IEnumerable<MvcFastFood.FastFoodServiceWeb.Category>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="~/Content/js/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#1").mouseenter(function () {
+            $("#1").animate({
+                right: '200px',
+                opacity: '0.9',
+                height: '70px',
+                width: '150px'
+            });
+        });
+        $("#1").mouseleave(function () {
+            $("#1").animate({
+                left: '0px',
+                opacity: '1',
+                height: '40px',
+                width: '50px'
+
+            });
+        });
+    });
+    $(document).ready(function () {
+        $("#2").mouseenter(function () {
+            $("#2").animate({
+                right:'200px',
+                opacity: '1',
+                height: '70px',
+                width: '150px'
+            });
+        });
+        $("#2").mouseleave(function () {
+            $("#2").animate({
+                left: '0px',
+                opacity: '0.9',
+                height: '40px',
+                width: '50px'
+
+            });
+        });
+    });
+    $(document).ready(function () {
+        $("#3").mouseenter(function () {
+            $("#3").animate({
+                right: '200px',
+                opacity: '1',
+                height: '70px',
+                width: '150px'
+            });
+        });
+        $("#3").mouseleave(function () {
+            $("#3").animate({
+                left: '0px',
+                opacity: '0.9',
+                height: '40px',
+                width: '50px'
+
+            });
+        });
+    });
+    $(document).ready(function () {
+        $("#4").mouseenter(function () {
+            $("#4").animate({
+                right: '200px',
+                opacity: '1',
+                height: '70px',
+                width: '150px'
+            });
+        });
+        $("#4").mouseleave(function () {
+            $("#4").animate({
+                left: '0px',
+                opacity: '0.9',
+                height: '40px',
+                width: '50px'
+            });
+        });
+    });
+    $(document).ready(function () {
+        $("#5").mouseenter(function () {
+            $("#5").animate({
+                right: '200px',
+                opacity: '1',
+                height: '70px',
+                width: '150px'
+            });
+        });
+        $("#5").mouseleave(function () {
+            $("#5").animate({
+                left: '0px',
+                opacity: '0.9',
+                height: '40px',
+                width: '50px'
+            });
+        });
+    });
+</script>
+
+
+<div class="col-md-3">
+    @*<p class="lead" style="color:red">Danh sách sản phẩm</p>*@
+    <div class="list-group">
+        @foreach (var cate in Model)
+        {
+            <a style="color:red" href="@Url.Action("getProductByCategory", "Home", new { categoryID= @cate.ID})" class="list-group-item"><div style="width:75px; float:left">@cate.CategoryName</div> <img id="@cate.ID" src="~/Images/@cate.ID .png" width="50" height="40" /> </a>
+        }
+    </div>
+    <div>
+        @*<img src="~/Images/Layout/iconCartColor2.jpg"*@
+    </div>
+</div>

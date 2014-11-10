@@ -1,0 +1,95 @@
+﻿@model MvcFastFood.Models.AccountModel
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:red">Đăng kí thành viên để có nhiều ưu đãi</h2>
+<div style="align-content:center; margin-left:200px">
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend></legend>
+        <h3 style="color:red; ">@ViewBag.FailRegister</h3>
+        <table>
+            <tr>
+                <td>
+                    Tên tài khoản :
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.UserName)
+                    @Html.ValidationMessageFor(model => model.UserName)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Mật khẩu :
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.Password)
+                    <span style="color:red">@Html.ValidationMessageFor(model => model.Password)</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Xác nhận mật khẩu :
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.ConfPassword)
+                    <span style="color:red">@Html.ValidationMessageFor(model => model.ConfPassword)</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Số điện thoại :
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.Phone)
+                    <span style="color:red">@Html.ValidationMessageFor(model => model.Phone)</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Tên :
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.Name)
+                    <span style="color:red">@Html.ValidationMessageFor(model => model.Name)</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Địa chỉ email :
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.Email)
+                    <span style="color:red">@Html.ValidationMessageFor(model => model.Email)</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Địa chỉ :
+                </td>
+                <td>
+                     @Html.EditorFor(model => model.Address)
+                    <span style="color:red">@Html.ValidationMessageFor(model => model.Address)</span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Đăng kí" />
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+}
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
