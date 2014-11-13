@@ -1,0 +1,59 @@
+DỊCH VỤ WEB VÀ ỨNG DỤNG
+
+GVHD: Lê Ngọc Anh
+Thành Viên:
+1.	Cao Văn Trọng – 3110410160
+2.	Lê Văn Long – 3110410073
+3.	Nguyễn Thanh Tùng – 3110410173
+
+			
+			
+I.	Giới thiệu
+Website fastfood chuyên cung cấp  các mặt hàng thức ăn nhanh và nước uống, đảm bảo vệ sinh chất lượng, giá cả phải chăng. Hợp khẩu vị mọi lứa tuổi.
+
+II.	Kiến trúc
+Ứng dụng xây dựng trên ASP.NET MVC, WINFORM, WCF và hệ quản trị cơ sở dữ liệu SQL Server
+
+III.	Thiết kế 
+-WCF : lấy dữ liệu từ Database, cung cấp các dịch vụ cho web và winfrom sử dụng, mọi tương tác dữ liệu (lấy dữ liệu lên và đẩy dữ liệu xuống) đều thông qua WCF.
+-WINFORM : Các chức năng quản lý người dùng, danh mục, sản phẩm, hoá đơn bán, hoá đơn nhập, kho và thống kê.
+-ASP.NET MVC  : Hiển thị, tìm kiếm, phân trang sản phẩm, đăng ký, đăng nhập tài khoản, đặt hàng trực tuyến.
+
+IV.	Các chức năng
+1.	WCF
+a.	Các service cho web
+- Lấy danh sách tất cả sản phẩm, lấy sản phẩm theo id, tên, lấy tất cả danh mục, lấy sản phẩm theo danh mục.
+- đăng nhập, đăng ký, lấy tài khoản theo id.
+- Thêm hoá đơn, chi tiết hoa đơn.
+b.	Các service cho winform
+- Lấy danh sách tất cả sản phẩm, lấy sản phẩm theo id, tên, thêm, sửa, xoá sản phẩm.
+- Lấy danh sách tất cả danh mục, lấy danh mục theo id, thêm, sửa, xoá danh mục.
+- Lấy danh sách tất cả hoá đơn, thêm, sửa, xoá hoá đơn, cập nhật trạng thái cho hoá đơn.
+- Lấy chi tiết hoá đơn theo id, thêm chi tiết hoá đơn.
+- Lấy danh sách tài khoản, thêm, xoá ,sửa tài khoản, đăng nhập.
+- Lấy hoá đơn theo ngày, tháng, quý, năm, chi tiết hoá đơn.
+- Lấy danh  sách loại người dùng.
+2.	Trên Web
+a.	Về sản phẩm 
+-  Hiển thị danh sách tất cả sản phẩm.
+-  Hiển thị danh sách sản phẩm theo phân loại.
+-  Hiển thị chi tiết từng sản phẩm.
+-  Tìm kiếm sản phẩm.
+b.	Về tài khoản
+-  Đăng ký tài khoản mới.
+-  Đăng nhập.
+c.	Về đặt hàng
+-  Thêm, xoá sản phẩm trong giỏ hàng
+-  Cập nhật số lượng.
+-  Chỉnh sửa thông tin người đặt hàng.
+-  Gửi email thông báo cho người đặt hàng
+3.	Trên Winform:
+a.	Quản lý người dùng
+b.	Quản lý danh mục
+c.	Quản lý sản phẩm
+d.	Quản lý hoá đơn bán
+e.	Quản lý hoá đơn nhập
+f.	Quản lý kho
+g.	Thống kê
+
+V.	Demo
