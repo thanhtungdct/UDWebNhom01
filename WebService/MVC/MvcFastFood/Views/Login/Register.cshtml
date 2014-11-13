@@ -22,7 +22,7 @@
                 </td>
                 <td>
                     @Html.EditorFor(model => model.UserName)
-                    @Html.ValidationMessageFor(model => model.UserName)
+                    <span style="color:red">@Html.ValidationMessageFor(model => model.UserName)</span>
                 </td>
             </tr>
             <tr>

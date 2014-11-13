@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Management));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,6 +39,9 @@
             this.btnManagementUser = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.btnReport = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -59,9 +63,9 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label2.Location = new System.Drawing.Point(451, 136);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 18);
+            this.label2.Size = new System.Drawing.Size(199, 18);
             this.label2.TabIndex = 2;
-            this.label2.Text = "QUẢN LÝ HÓA ĐƠN";
+            this.label2.Text = "QUẢN LÝ HÓA ĐƠN BÁN";
             // 
             // label3
             // 
@@ -135,7 +139,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label5.Location = new System.Drawing.Point(275, 246);
+            this.label5.Location = new System.Drawing.Point(284, 136);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 18);
             this.label5.TabIndex = 6;
@@ -145,18 +149,53 @@
             // 
             this.btnReport.FlatAppearance.BorderSize = 0;
             this.btnReport.Image = global::WFManagermentFastFood.Properties.Resources._1chart;
-            this.btnReport.Location = new System.Drawing.Point(260, 115);
+            this.btnReport.Location = new System.Drawing.Point(268, 12);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(126, 118);
             this.btnReport.TabIndex = 7;
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(268, 196);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(126, 118);
+            this.button1.TabIndex = 9;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label6.Location = new System.Drawing.Point(246, 320);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(172, 18);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "QUẢN LÝ KHO - HĐN";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(514, 382);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Đóng";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 356);
+            this.ClientSize = new System.Drawing.Size(670, 417);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -187,5 +226,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button2;
     }
 }

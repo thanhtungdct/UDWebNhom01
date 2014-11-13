@@ -37,6 +37,10 @@ namespace WFManagermentFastFood
             btnReport.TabStop = false;
             btnReport.FlatStyle = FlatStyle.Flat;
             btnReport.FlatAppearance.BorderSize = 0;
+
+            button1.TabStop = false;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.FlatAppearance.BorderSize = 0;
         }
 
         private void btnManagementUser_Click(object sender, EventArgs e)
@@ -73,6 +77,17 @@ namespace WFManagermentFastFood
         {
             ManagementReport f = new ManagementReport();
             f.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ManagementStorage f = new ManagementStorage();
+            f.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); 
         }
     }
 }

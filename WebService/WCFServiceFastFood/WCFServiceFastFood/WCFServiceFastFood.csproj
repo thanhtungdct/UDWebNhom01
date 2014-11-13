@@ -56,67 +56,73 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs">
-      <DependentUpon>ModelFastFood.tt</DependentUpon>
+      <DependentUpon>FastFoodModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Category.cs">
-      <DependentUpon>ModelFastFood.tt</DependentUpon>
+      <DependentUpon>FastFoodModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FastFoodModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FastFoodModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FastFoodModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FastFoodModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FastFoodModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FastFoodModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>FastFoodModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetail.cs">
+      <DependentUpon>FastFoodModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderImport.cs">
+      <DependentUpon>FastFoodModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderImportDetail.cs">
+      <DependentUpon>FastFoodModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>FastFoodModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Storage.cs">
+      <DependentUpon>FastFoodModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserType.cs">
+      <DependentUpon>FastFoodModel.tt</DependentUpon>
     </Compile>
     <Compile Include="WF\FastFoodService.cs" />
     <Compile Include="WF\IFastFoodService.cs" />
     <Compile Include="MVC\IWedMVC.cs" />
-    <Compile Include="ModelFastFood.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelFastFood.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelFastFood.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelFastFood.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelFastFood.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelFastFood.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Order.cs">
-      <DependentUpon>ModelFastFood.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OrderDetail.cs">
-      <DependentUpon>ModelFastFood.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Product.cs">
-      <DependentUpon>ModelFastFood.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>ModelFastFood.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserType.cs">
-      <DependentUpon>ModelFastFood.tt</DependentUpon>
-    </Compile>
     <Compile Include="MVC\WedMVC.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <EntityDeploy Include="ModelFastFood.edmx">
+    <EntityDeploy Include="FastFoodModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelFastFood.Designer.cs</LastGenOutput>
+      <LastGenOutput>FastFoodModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ModelFastFood.Context.tt">
+    <None Include="FastFoodModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelFastFood.edmx</DependentUpon>
-      <LastGenOutput>ModelFastFood.Context.cs</LastGenOutput>
+      <DependentUpon>FastFoodModel.edmx</DependentUpon>
+      <LastGenOutput>FastFoodModel.Context.cs</LastGenOutput>
     </None>
-    <None Include="ModelFastFood.edmx.diagram">
-      <DependentUpon>ModelFastFood.edmx</DependentUpon>
+    <None Include="FastFoodModel.edmx.diagram">
+      <DependentUpon>FastFoodModel.edmx</DependentUpon>
     </None>
-    <None Include="ModelFastFood.tt">
+    <None Include="FastFoodModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelFastFood.edmx</DependentUpon>
-      <LastGenOutput>ModelFastFood.cs</LastGenOutput>
+      <DependentUpon>FastFoodModel.edmx</DependentUpon>
+      <LastGenOutput>FastFoodModel.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

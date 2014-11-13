@@ -127,6 +127,18 @@ namespace WCFServiceFastFood
         [OperationContract]
         List<OrderDetail> getOrderDetailReprort(string OrderID);
         #endregion
+        [OperationContract]
+        bool InsertOrderImport(OrderImport orderImport);
+        [OperationContract]
+        bool InsertOrderImportDetail(OrderImportDetail orderImportDetail);
+        [OperationContract]
+        Storage GetProductInStorage(string productID);
+        [OperationContract]
+        bool InsertProductToStorage(string productID, int quantity);
+        [OperationContract]
+        bool UpdateProductToStorage(string productID, int quantity);
+        [OperationContract]
+        List<Storage> Storage(DateTime date);
 
     }
 }

@@ -1,94 +1,158 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="FastFoodModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="FastFoodEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="FastFoodModel.Account" />
+    <EntitySet Name="Categories" EntityType="FastFoodModel.Category" />
+    <EntitySet Name="Orders" EntityType="FastFoodModel.Order" />
+    <EntitySet Name="OrderDetails" EntityType="FastFoodModel.OrderDetail" />
+    <EntitySet Name="OrderImports" EntityType="FastFoodModel.OrderImport" />
+    <EntitySet Name="OrderImportDetails" EntityType="FastFoodModel.OrderImportDetail" />
+    <EntitySet Name="Products" EntityType="FastFoodModel.Product" />
+    <EntitySet Name="Storages" EntityType="FastFoodModel.Storage" />
+    <EntitySet Name="UserTypes" EntityType="FastFoodModel.UserType" />
+    <AssociationSet Name="FK_Account_UserType" Association="FastFoodModel.FK_Account_UserType">
+      <End Role="UserType" EntitySet="UserTypes" />
+      <End Role="Account" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Users" Association="FastFoodModel.FK_Order_Users">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_Category" Association="FastFoodModel.FK_Products_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OderDetail_Order" Association="FastFoodModel.FK_OderDetail_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OderDetail_Products" Association="FastFoodModel.FK_OderDetail_Products">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderImportDetail_OrderImport" Association="FastFoodModel.FK_OrderImportDetail_OrderImport">
+      <End Role="OrderImport" EntitySet="OrderImports" />
+      <End Role="OrderImportDetail" EntitySet="OrderImportDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderImportDetail_Products" Association="FastFoodModel.FK_OrderImportDetail_Products">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="OrderImportDetail" EntitySet="OrderImportDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Storage_Products" Association="FastFoodModel.FK_Storage_Products">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Storage" EntitySet="Storages" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="Account">
     <Key>
       <PropertyRef Name="UserName" />
     </Key>
-    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="UserTypeID" Type="Int32" Nullable="false" />
-    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="UserType" Relationship="Self.FK_Account_UserType" FromRole="Account" ToRole="UserType" />
-    <NavigationProperty Name="Orders" Relationship="Self.FK_Order_Users" FromRole="Account" ToRole="Order" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserType" Relationship="FastFoodModel.FK_Account_UserType" FromRole="Account" ToRole="UserType" />
+    <NavigationProperty Name="Orders" Relationship="FastFoodModel.FK_Order_Users" FromRole="Account" ToRole="Order" />
   </EntityType>
   <EntityType Name="Category">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Products" Relationship="Self.FK_Products_Category" FromRole="Category" ToRole="Products" />
+    <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Products" Relationship="FastFoodModel.FK_Products_Category" FromRole="Category" ToRole="Product" />
   </EntityType>
   <EntityType Name="Order">
     <Key>
       <PropertyRef Name="OrderID" />
     </Key>
-    <Property Name="OrderID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="RecipientAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrderID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RecipientAddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="TotalPrice" Type="Double" Nullable="false" />
     <Property Name="Status" Type="Boolean" Nullable="false" />
-    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="DateCreate" Type="DateTime" Precision="0" Nullable="false" />
-    <Property Name="Payment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Account" Relationship="Self.FK_Order_Users" FromRole="Order" ToRole="Account" />
-    <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OderDetail_Order" FromRole="Order" ToRole="OrderDetail" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Payment" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Note" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Account" Relationship="FastFoodModel.FK_Order_Users" FromRole="Order" ToRole="Account" />
+    <NavigationProperty Name="OrderDetails" Relationship="FastFoodModel.FK_OderDetail_Order" FromRole="Order" ToRole="OrderDetail" />
   </EntityType>
   <EntityType Name="OrderDetail">
     <Key>
       <PropertyRef Name="OrderID" />
       <PropertyRef Name="ProductID" />
     </Key>
-    <Property Name="OrderID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="ProductID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrderID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProductID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Quantity" Type="Int32" Nullable="false" />
     <Property Name="UnitPrice" Type="Double" Nullable="false" />
-    <NavigationProperty Name="Order" Relationship="Self.FK_OderDetail_Order" FromRole="OrderDetail" ToRole="Order" />
-    <NavigationProperty Name="Product" Relationship="Self.FK_OderDetail_Products" FromRole="OrderDetail" ToRole="Products" />
+    <NavigationProperty Name="Order" Relationship="FastFoodModel.FK_OderDetail_Order" FromRole="OrderDetail" ToRole="Order" />
+    <NavigationProperty Name="Product" Relationship="FastFoodModel.FK_OderDetail_Products" FromRole="OrderDetail" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="OrderImport">
+    <Key>
+      <PropertyRef Name="OrderImportID" />
+    </Key>
+    <Property Name="OrderImportID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateImport" Type="DateTime" Precision="0" />
+    <Property Name="TotalPrice" Type="Double" />
+    <NavigationProperty Name="OrderImportDetails" Relationship="FastFoodModel.FK_OrderImportDetail_OrderImport" FromRole="OrderImport" ToRole="OrderImportDetail" />
+  </EntityType>
+  <EntityType Name="OrderImportDetail">
+    <Key>
+      <PropertyRef Name="OrderImportID" />
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="OrderImportID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProductID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="UnitPrice" Type="Double" />
+    <NavigationProperty Name="OrderImport" Relationship="FastFoodModel.FK_OrderImportDetail_OrderImport" FromRole="OrderImportDetail" ToRole="OrderImport" />
+    <NavigationProperty Name="Product" Relationship="FastFoodModel.FK_OrderImportDetail_Products" FromRole="OrderImportDetail" ToRole="Product" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
       <PropertyRef Name="ProductID" />
     </Key>
-    <Property Name="ProductID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="CategoryID" Type="Int32" />
     <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Discount" Type="Int32" />
     <Property Name="UnitPrice" Type="Double" />
     <Property Name="Display" Type="Boolean" />
-    <Property Name="Vote" Type="Int32" />
     <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <NavigationProperty Name="Category" Relationship="Self.FK_Products_Category" FromRole="Products" ToRole="Category" />
-    <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OderDetail_Products" FromRole="Products" ToRole="OrderDetail" />
+    <NavigationProperty Name="Category" Relationship="FastFoodModel.FK_Products_Category" FromRole="Product" ToRole="Category" />
+    <NavigationProperty Name="OrderDetails" Relationship="FastFoodModel.FK_OderDetail_Products" FromRole="Product" ToRole="OrderDetail" />
+    <NavigationProperty Name="OrderImportDetails" Relationship="FastFoodModel.FK_OrderImportDetail_Products" FromRole="Product" ToRole="OrderImportDetail" />
+    <NavigationProperty Name="Storages" Relationship="FastFoodModel.FK_Storage_Products" FromRole="Product" ToRole="Storage" />
   </EntityType>
-  <EntityType Name="sysdiagram">
+  <EntityType Name="Storage">
     <Key>
-      <PropertyRef Name="diagram_id" />
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="DateUpdate" />
     </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="DateUpdate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Product" Relationship="FastFoodModel.FK_Storage_Products" FromRole="Storage" ToRole="Product" />
   </EntityType>
   <EntityType Name="UserType">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserType1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Accounts" Relationship="Self.FK_Account_UserType" FromRole="UserType" ToRole="Account" />
+    <Property Name="UserType1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Accounts" Relationship="FastFoodModel.FK_Account_UserType" FromRole="UserType" ToRole="Account" />
   </EntityType>
   <Association Name="FK_Account_UserType">
-    <End Role="UserType" Type="Self.UserType" Multiplicity="1" />
-    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <End Type="FastFoodModel.UserType" Role="UserType" Multiplicity="1" />
+    <End Type="FastFoodModel.Account" Role="Account" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserType">
         <PropertyRef Name="ID" />
@@ -99,8 +163,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Order_Users">
-    <End Role="Account" Type="Self.Account" Multiplicity="1" />
-    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <End Type="FastFoodModel.Account" Role="Account" Multiplicity="1" />
+    <End Type="FastFoodModel.Order" Role="Order" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Account">
         <PropertyRef Name="UserName" />
@@ -111,20 +175,20 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Products_Category">
-    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
-    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <End Type="FastFoodModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="FastFoodModel.Product" Role="Product" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Category">
         <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="Products">
+      <Dependent Role="Product">
         <PropertyRef Name="CategoryID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_OderDetail_Order">
-    <End Role="Order" Type="Self.Order" Multiplicity="1" />
-    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+    <End Type="FastFoodModel.Order" Role="Order" Multiplicity="1" />
+    <End Type="FastFoodModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Order">
         <PropertyRef Name="OrderID" />
@@ -135,10 +199,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_OderDetail_Products">
-    <End Role="Products" Type="Self.Product" Multiplicity="1" />
-    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+    <End Type="FastFoodModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="FastFoodModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Products">
+      <Principal Role="Product">
         <PropertyRef Name="ProductID" />
       </Principal>
       <Dependent Role="OrderDetail">
@@ -146,33 +210,40 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="FastFoodEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Accounts" EntityType="Self.Account" />
-    <EntitySet Name="Categories" EntityType="Self.Category" />
-    <EntitySet Name="Orders" EntityType="Self.Order" />
-    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
-    <EntitySet Name="Products" EntityType="Self.Product" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-    <EntitySet Name="UserTypes" EntityType="Self.UserType" />
-    <AssociationSet Name="FK_Account_UserType" Association="Self.FK_Account_UserType">
-      <End Role="UserType" EntitySet="UserTypes" />
-      <End Role="Account" EntitySet="Accounts" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Order_Users" Association="Self.FK_Order_Users">
-      <End Role="Account" EntitySet="Accounts" />
-      <End Role="Order" EntitySet="Orders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Products_Category" Association="Self.FK_Products_Category">
-      <End Role="Category" EntitySet="Categories" />
-      <End Role="Products" EntitySet="Products" />
-    </AssociationSet>
-    <AssociationSet Name="FK_OderDetail_Order" Association="Self.FK_OderDetail_Order">
-      <End Role="Order" EntitySet="Orders" />
-      <End Role="OrderDetail" EntitySet="OrderDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_OderDetail_Products" Association="Self.FK_OderDetail_Products">
-      <End Role="Products" EntitySet="Products" />
-      <End Role="OrderDetail" EntitySet="OrderDetails" />
-    </AssociationSet>
-  </EntityContainer>
+  <Association Name="FK_OrderImportDetail_OrderImport">
+    <End Type="FastFoodModel.OrderImport" Role="OrderImport" Multiplicity="1" />
+    <End Type="FastFoodModel.OrderImportDetail" Role="OrderImportDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderImport">
+        <PropertyRef Name="OrderImportID" />
+      </Principal>
+      <Dependent Role="OrderImportDetail">
+        <PropertyRef Name="OrderImportID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderImportDetail_Products">
+    <End Type="FastFoodModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="FastFoodModel.OrderImportDetail" Role="OrderImportDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="OrderImportDetail">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Storage_Products">
+    <End Type="FastFoodModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="FastFoodModel.Storage" Role="Storage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Storage">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

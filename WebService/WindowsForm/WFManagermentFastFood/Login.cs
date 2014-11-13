@@ -30,15 +30,19 @@ namespace WFManagermentFastFood
         {
             FastFoodServiceClient db = new FastFoodServiceClient();
             Account [] s = db.login(txtUserName.Text, txtPass.Text);
+           // sử dụng hàm login bên service để kiểm tra đăng nhập
             if (s.Count() > 0)
             {
                 MessageBox.Show("Đăng nhập thành công !");
-                ManagementUser m = new ManagementUser();
+                Management m = new Management();
                 m.Show();
+               // this.Close();
+                this.Hide();
             }
             else {
                 MessageBox.Show("Đăng nhập thất bại !");
             }
+            
         }
     }
 }

@@ -11,14 +11,14 @@
       <xs:element minOccurs="0" name="Category" nillable="true" type="tns:Category" />
       <xs:element minOccurs="0" name="CategoryID" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Discount" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="Display" nillable="true" type="xs:boolean" />
       <xs:element minOccurs="0" name="Image" nillable="true" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="OrderDetails" nillable="true" type="tns:ArrayOfOrderDetail" />
+      <xs:element minOccurs="0" name="OrderImportDetails" nillable="true" type="tns:ArrayOfOrderImportDetail" />
       <xs:element minOccurs="0" name="ProductID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Storages" nillable="true" type="tns:ArrayOfStorage" />
       <xs:element minOccurs="0" name="UnitPrice" nillable="true" type="xs:double" />
-      <xs:element minOccurs="0" name="Vote" nillable="true" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Product" nillable="true" type="tns:Product" />
@@ -99,6 +99,47 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfAccount" nillable="true" type="tns:ArrayOfAccount" />
+  <xs:complexType name="ArrayOfOrderImportDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderImportDetail" nillable="true" type="tns:OrderImportDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrderImportDetail" nillable="true" type="tns:ArrayOfOrderImportDetail" />
+  <xs:complexType name="OrderImportDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OrderImport" nillable="true" type="tns:OrderImport" />
+      <xs:element minOccurs="0" name="OrderImportID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+      <xs:element minOccurs="0" name="ProductID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitPrice" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderImportDetail" nillable="true" type="tns:OrderImportDetail" />
+  <xs:complexType name="OrderImport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateImport" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderImportDetails" nillable="true" type="tns:ArrayOfOrderImportDetail" />
+      <xs:element minOccurs="0" name="OrderImportID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalPrice" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderImport" nillable="true" type="tns:OrderImport" />
+  <xs:complexType name="ArrayOfStorage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Storage" nillable="true" type="tns:Storage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStorage" nillable="true" type="tns:ArrayOfStorage" />
+  <xs:complexType name="Storage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateUpdate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+      <xs:element minOccurs="0" name="ProductID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Storage" nillable="true" type="tns:Storage" />
   <xs:complexType name="ArrayOfCategory">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Category" nillable="true" type="tns:Category" />

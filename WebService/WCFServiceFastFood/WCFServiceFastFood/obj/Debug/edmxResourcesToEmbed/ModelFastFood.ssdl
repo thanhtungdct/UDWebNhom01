@@ -45,6 +45,24 @@
     <Property Name="Quantity" Type="int" Nullable="false" />
     <Property Name="UnitPrice" Type="float" Nullable="false" />
   </EntityType>
+  <EntityType Name="OrderImport">
+    <Key>
+      <PropertyRef Name="OrderImportID" />
+    </Key>
+    <Property Name="OrderImportID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateImport" Type="date" />
+    <Property Name="TotalPrice" Type="float" />
+  </EntityType>
+  <EntityType Name="OrderImportDetail">
+    <Key>
+      <PropertyRef Name="OrderImportID" />
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="OrderImportID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProductID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="UnitPrice" Type="float" />
+  </EntityType>
   <EntityType Name="Products">
     <Key>
       <PropertyRef Name="ProductID" />
@@ -53,21 +71,18 @@
     <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
     <Property Name="CategoryID" Type="int" />
     <Property Name="Description" Type="nvarchar" MaxLength="50" />
-    <Property Name="Discount" Type="int" />
     <Property Name="UnitPrice" Type="float" />
     <Property Name="Display" Type="bit" />
-    <Property Name="Vote" Type="int" />
     <Property Name="Image" Type="image" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
+  <EntityType Name="Storage">
     <Key>
-      <PropertyRef Name="diagram_id" />
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="DateUpdate" />
     </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
+    <Property Name="ProductID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="DateUpdate" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="UserType">
     <Key>
@@ -124,6 +139,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_OrderImportDetail_OrderImport">
+    <End Role="OrderImport" Type="Self.OrderImport" Multiplicity="1" />
+    <End Role="OrderImportDetail" Type="Self.OrderImportDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderImport">
+        <PropertyRef Name="OrderImportID" />
+      </Principal>
+      <Dependent Role="OrderImportDetail">
+        <PropertyRef Name="OrderImportID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderImportDetail_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="OrderImportDetail" Type="Self.OrderImportDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="OrderImportDetail">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Products_Category">
     <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
     <End Role="Products" Type="Self.Products" Multiplicity="*" />
@@ -136,13 +175,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Storage_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Storage">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="FastFoodModelStoreContainer">
     <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderImport" EntityType="Self.OrderImport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderImportDetail" EntityType="Self.OrderImportDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Storage" EntityType="Self.Storage" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserType" EntityType="Self.UserType" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Account_UserType" Association="Self.FK_Account_UserType">
       <End Role="UserType" EntitySet="UserType" />
@@ -160,9 +213,21 @@
       <End Role="Account" EntitySet="Account" />
       <End Role="Order" EntitySet="Order" />
     </AssociationSet>
+    <AssociationSet Name="FK_OrderImportDetail_OrderImport" Association="Self.FK_OrderImportDetail_OrderImport">
+      <End Role="OrderImport" EntitySet="OrderImport" />
+      <End Role="OrderImportDetail" EntitySet="OrderImportDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderImportDetail_Products" Association="Self.FK_OrderImportDetail_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="OrderImportDetail" EntitySet="OrderImportDetail" />
+    </AssociationSet>
     <AssociationSet Name="FK_Products_Category" Association="Self.FK_Products_Category">
       <End Role="Category" EntitySet="Category" />
       <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Storage_Products" Association="Self.FK_Storage_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Storage" EntitySet="Storage" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

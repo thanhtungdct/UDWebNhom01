@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fde435af-47fb-42be-82ed-6de8029e9851" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9cbfbcd5-ec6d-47b7-9dcc-0e170b0ad6e4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -21,10 +21,10 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/WCFServiceFastFood/FastFoodService/mex/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="2cf6c8ae-36b1-4c51-9a73-a0f03f291e8c" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFServiceFastFood/FastFoodService/mex/mex" />
-    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="31726012-8f1c-4f3e-bf73-4fef1614e821" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFServiceFastFood/FastFoodService/mex/mex" />
-    <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="20e43c5a-a9fd-4b97-8c98-cc2d99fa806a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFServiceFastFood/FastFoodService/mex/mex" />
-    <MetadataFile FileName="WCFServiceFastFood1.xsd" MetadataType="Schema" ID="856314f6-f917-4aae-a25c-405315028236" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFServiceFastFood/FastFoodService/mex/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="abba367d-2f3a-4356-acf4-aa1ef23a9384" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFServiceFastFood/FastFoodService/mex/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="53087fc4-ba06-453a-8fa2-dce589534caf" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFServiceFastFood/FastFoodService/mex/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="be0f2fb2-504f-4233-b93b-1c6daeadec21" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFServiceFastFood/FastFoodService/mex/mex" />
+    <MetadataFile FileName="WCFServiceFastFood.xsd" MetadataType="Schema" ID="78aa1f1a-9420-4963-9f02-eafd83f20dd9" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFServiceFastFood/FastFoodService/mex/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

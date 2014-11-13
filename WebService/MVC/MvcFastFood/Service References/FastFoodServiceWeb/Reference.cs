@@ -32,9 +32,6 @@ namespace MvcFastFood.FastFoodServiceWeb {
         private string DescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> DiscountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<bool> DisplayField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -44,16 +41,19 @@ namespace MvcFastFood.FastFoodServiceWeb {
         private MvcFastFood.FastFoodServiceWeb.OrderDetail[] OrderDetailsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MvcFastFood.FastFoodServiceWeb.OrderImportDetail[] OrderImportDetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProductIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProductNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> UnitPriceField;
+        private MvcFastFood.FastFoodServiceWeb.Storage[] StoragesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> VoteField;
+        private System.Nullable<double> UnitPriceField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -105,19 +105,6 @@ namespace MvcFastFood.FastFoodServiceWeb {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Discount {
-            get {
-                return this.DiscountField;
-            }
-            set {
-                if ((this.DiscountField.Equals(value) != true)) {
-                    this.DiscountField = value;
-                    this.RaisePropertyChanged("Discount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> Display {
             get {
                 return this.DisplayField;
@@ -157,6 +144,19 @@ namespace MvcFastFood.FastFoodServiceWeb {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public MvcFastFood.FastFoodServiceWeb.OrderImportDetail[] OrderImportDetails {
+            get {
+                return this.OrderImportDetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderImportDetailsField, value) != true)) {
+                    this.OrderImportDetailsField = value;
+                    this.RaisePropertyChanged("OrderImportDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string ProductID {
             get {
                 return this.ProductIDField;
@@ -183,6 +183,19 @@ namespace MvcFastFood.FastFoodServiceWeb {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public MvcFastFood.FastFoodServiceWeb.Storage[] Storages {
+            get {
+                return this.StoragesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StoragesField, value) != true)) {
+                    this.StoragesField = value;
+                    this.RaisePropertyChanged("Storages");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<double> UnitPrice {
             get {
                 return this.UnitPriceField;
@@ -191,19 +204,6 @@ namespace MvcFastFood.FastFoodServiceWeb {
                 if ((this.UnitPriceField.Equals(value) != true)) {
                     this.UnitPriceField = value;
                     this.RaisePropertyChanged("UnitPrice");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Vote {
-            get {
-                return this.VoteField;
-            }
-            set {
-                if ((this.VoteField.Equals(value) != true)) {
-                    this.VoteField = value;
-                    this.RaisePropertyChanged("Vote");
                 }
             }
         }
@@ -406,6 +406,224 @@ namespace MvcFastFood.FastFoodServiceWeb {
                 if ((this.UnitPriceField.Equals(value) != true)) {
                     this.UnitPriceField = value;
                     this.RaisePropertyChanged("UnitPrice");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OrderImportDetail", Namespace="http://schemas.datacontract.org/2004/07/WCFServiceFastFood")]
+    [System.SerializableAttribute()]
+    public partial class OrderImportDetail : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MvcFastFood.FastFoodServiceWeb.OrderImport OrderImportField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrderImportIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MvcFastFood.FastFoodServiceWeb.Product ProductField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> UnitPriceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MvcFastFood.FastFoodServiceWeb.OrderImport OrderImport {
+            get {
+                return this.OrderImportField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderImportField, value) != true)) {
+                    this.OrderImportField = value;
+                    this.RaisePropertyChanged("OrderImport");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrderImportID {
+            get {
+                return this.OrderImportIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderImportIDField, value) != true)) {
+                    this.OrderImportIDField = value;
+                    this.RaisePropertyChanged("OrderImportID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MvcFastFood.FastFoodServiceWeb.Product Product {
+            get {
+                return this.ProductField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductField, value) != true)) {
+                    this.ProductField = value;
+                    this.RaisePropertyChanged("Product");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductIDField, value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> UnitPrice {
+            get {
+                return this.UnitPriceField;
+            }
+            set {
+                if ((this.UnitPriceField.Equals(value) != true)) {
+                    this.UnitPriceField = value;
+                    this.RaisePropertyChanged("UnitPrice");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Storage", Namespace="http://schemas.datacontract.org/2004/07/WCFServiceFastFood")]
+    [System.SerializableAttribute()]
+    public partial class Storage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateUpdateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MvcFastFood.FastFoodServiceWeb.Product ProductField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantityField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DateUpdate {
+            get {
+                return this.DateUpdateField;
+            }
+            set {
+                if ((this.DateUpdateField.Equals(value) != true)) {
+                    this.DateUpdateField = value;
+                    this.RaisePropertyChanged("DateUpdate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MvcFastFood.FastFoodServiceWeb.Product Product {
+            get {
+                return this.ProductField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductField, value) != true)) {
+                    this.ProductField = value;
+                    this.RaisePropertyChanged("Product");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductIDField, value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
                 }
             }
         }
@@ -907,6 +1125,99 @@ namespace MvcFastFood.FastFoodServiceWeb {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OrderImport", Namespace="http://schemas.datacontract.org/2004/07/WCFServiceFastFood")]
+    [System.SerializableAttribute()]
+    public partial class OrderImport : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> DateImportField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MvcFastFood.FastFoodServiceWeb.OrderImportDetail[] OrderImportDetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrderImportIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> TotalPriceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> DateImport {
+            get {
+                return this.DateImportField;
+            }
+            set {
+                if ((this.DateImportField.Equals(value) != true)) {
+                    this.DateImportField = value;
+                    this.RaisePropertyChanged("DateImport");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MvcFastFood.FastFoodServiceWeb.OrderImportDetail[] OrderImportDetails {
+            get {
+                return this.OrderImportDetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderImportDetailsField, value) != true)) {
+                    this.OrderImportDetailsField = value;
+                    this.RaisePropertyChanged("OrderImportDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrderImportID {
+            get {
+                return this.OrderImportIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderImportIDField, value) != true)) {
+                    this.OrderImportIDField = value;
+                    this.RaisePropertyChanged("OrderImportID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> TotalPrice {
+            get {
+                return this.TotalPriceField;
+            }
+            set {
+                if ((this.TotalPriceField.Equals(value) != true)) {
+                    this.TotalPriceField = value;
+                    this.RaisePropertyChanged("TotalPrice");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FastFoodServiceWeb.IWedMVC")]
     public interface IWedMVC {
@@ -917,17 +1228,14 @@ namespace MvcFastFood.FastFoodServiceWeb {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWedMVC/getProductByID", ReplyAction="http://tempuri.org/IWedMVC/getProductByIDResponse")]
         MvcFastFood.FastFoodServiceWeb.Product getProductByID(string productID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWedMVC/search", ReplyAction="http://tempuri.org/IWedMVC/searchResponse")]
-        MvcFastFood.FastFoodServiceWeb.Product[] search(string productName);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWedMVC/getProductByName", ReplyAction="http://tempuri.org/IWedMVC/getProductByNameResponse")]
+        MvcFastFood.FastFoodServiceWeb.Product[] getProductByName(string productName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWedMVC/getProductByCategory", ReplyAction="http://tempuri.org/IWedMVC/getProductByCategoryResponse")]
         MvcFastFood.FastFoodServiceWeb.Product[] getProductByCategory(int categoryID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWedMVC/getAllCategory", ReplyAction="http://tempuri.org/IWedMVC/getAllCategoryResponse")]
         MvcFastFood.FastFoodServiceWeb.Category[] getAllCategory();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWedMVC/getProductByName", ReplyAction="http://tempuri.org/IWedMVC/getProductByNameResponse")]
-        MvcFastFood.FastFoodServiceWeb.Product[] getProductByName(string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWedMVC/login", ReplyAction="http://tempuri.org/IWedMVC/loginResponse")]
         MvcFastFood.FastFoodServiceWeb.Account[] login(string userName, string passWord);
@@ -943,6 +1251,12 @@ namespace MvcFastFood.FastFoodServiceWeb {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWedMVC/insertOrderDetail", ReplyAction="http://tempuri.org/IWedMVC/insertOrderDetailResponse")]
         bool insertOrderDetail(MvcFastFood.FastFoodServiceWeb.OrderDetail orderDetai);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWedMVC/UpdateProductToStorage", ReplyAction="http://tempuri.org/IWedMVC/UpdateProductToStorageResponse")]
+        bool UpdateProductToStorage(string productID, int quantity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWedMVC/CheckQuantity", ReplyAction="http://tempuri.org/IWedMVC/CheckQuantityResponse")]
+        int CheckQuantity(string productID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -980,8 +1294,8 @@ namespace MvcFastFood.FastFoodServiceWeb {
             return base.Channel.getProductByID(productID);
         }
         
-        public MvcFastFood.FastFoodServiceWeb.Product[] search(string productName) {
-            return base.Channel.search(productName);
+        public MvcFastFood.FastFoodServiceWeb.Product[] getProductByName(string productName) {
+            return base.Channel.getProductByName(productName);
         }
         
         public MvcFastFood.FastFoodServiceWeb.Product[] getProductByCategory(int categoryID) {
@@ -990,10 +1304,6 @@ namespace MvcFastFood.FastFoodServiceWeb {
         
         public MvcFastFood.FastFoodServiceWeb.Category[] getAllCategory() {
             return base.Channel.getAllCategory();
-        }
-        
-        public MvcFastFood.FastFoodServiceWeb.Product[] getProductByName(string name) {
-            return base.Channel.getProductByName(name);
         }
         
         public MvcFastFood.FastFoodServiceWeb.Account[] login(string userName, string passWord) {
@@ -1014,6 +1324,14 @@ namespace MvcFastFood.FastFoodServiceWeb {
         
         public bool insertOrderDetail(MvcFastFood.FastFoodServiceWeb.OrderDetail orderDetai) {
             return base.Channel.insertOrderDetail(orderDetai);
+        }
+        
+        public bool UpdateProductToStorage(string productID, int quantity) {
+            return base.Channel.UpdateProductToStorage(productID, quantity);
+        }
+        
+        public int CheckQuantity(string productID) {
+            return base.Channel.CheckQuantity(productID);
         }
     }
 }

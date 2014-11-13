@@ -32,9 +32,6 @@ namespace WFManagermentFastFood.FastFoddService {
         private string DescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> DiscountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<bool> DisplayField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -44,16 +41,19 @@ namespace WFManagermentFastFood.FastFoddService {
         private WFManagermentFastFood.FastFoddService.OrderDetail[] OrderDetailsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WFManagermentFastFood.FastFoddService.OrderImportDetail[] OrderImportDetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProductIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProductNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> UnitPriceField;
+        private WFManagermentFastFood.FastFoddService.Storage[] StoragesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> VoteField;
+        private System.Nullable<double> UnitPriceField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -105,19 +105,6 @@ namespace WFManagermentFastFood.FastFoddService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Discount {
-            get {
-                return this.DiscountField;
-            }
-            set {
-                if ((this.DiscountField.Equals(value) != true)) {
-                    this.DiscountField = value;
-                    this.RaisePropertyChanged("Discount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> Display {
             get {
                 return this.DisplayField;
@@ -157,6 +144,19 @@ namespace WFManagermentFastFood.FastFoddService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public WFManagermentFastFood.FastFoddService.OrderImportDetail[] OrderImportDetails {
+            get {
+                return this.OrderImportDetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderImportDetailsField, value) != true)) {
+                    this.OrderImportDetailsField = value;
+                    this.RaisePropertyChanged("OrderImportDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string ProductID {
             get {
                 return this.ProductIDField;
@@ -183,6 +183,19 @@ namespace WFManagermentFastFood.FastFoddService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public WFManagermentFastFood.FastFoddService.Storage[] Storages {
+            get {
+                return this.StoragesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StoragesField, value) != true)) {
+                    this.StoragesField = value;
+                    this.RaisePropertyChanged("Storages");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<double> UnitPrice {
             get {
                 return this.UnitPriceField;
@@ -191,19 +204,6 @@ namespace WFManagermentFastFood.FastFoddService {
                 if ((this.UnitPriceField.Equals(value) != true)) {
                     this.UnitPriceField = value;
                     this.RaisePropertyChanged("UnitPrice");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Vote {
-            get {
-                return this.VoteField;
-            }
-            set {
-                if ((this.VoteField.Equals(value) != true)) {
-                    this.VoteField = value;
-                    this.RaisePropertyChanged("Vote");
                 }
             }
         }
@@ -406,6 +406,224 @@ namespace WFManagermentFastFood.FastFoddService {
                 if ((this.UnitPriceField.Equals(value) != true)) {
                     this.UnitPriceField = value;
                     this.RaisePropertyChanged("UnitPrice");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OrderImportDetail", Namespace="http://schemas.datacontract.org/2004/07/WCFServiceFastFood")]
+    [System.SerializableAttribute()]
+    public partial class OrderImportDetail : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WFManagermentFastFood.FastFoddService.OrderImport OrderImportField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrderImportIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WFManagermentFastFood.FastFoddService.Product ProductField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> UnitPriceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WFManagermentFastFood.FastFoddService.OrderImport OrderImport {
+            get {
+                return this.OrderImportField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderImportField, value) != true)) {
+                    this.OrderImportField = value;
+                    this.RaisePropertyChanged("OrderImport");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrderImportID {
+            get {
+                return this.OrderImportIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderImportIDField, value) != true)) {
+                    this.OrderImportIDField = value;
+                    this.RaisePropertyChanged("OrderImportID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WFManagermentFastFood.FastFoddService.Product Product {
+            get {
+                return this.ProductField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductField, value) != true)) {
+                    this.ProductField = value;
+                    this.RaisePropertyChanged("Product");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductIDField, value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> UnitPrice {
+            get {
+                return this.UnitPriceField;
+            }
+            set {
+                if ((this.UnitPriceField.Equals(value) != true)) {
+                    this.UnitPriceField = value;
+                    this.RaisePropertyChanged("UnitPrice");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Storage", Namespace="http://schemas.datacontract.org/2004/07/WCFServiceFastFood")]
+    [System.SerializableAttribute()]
+    public partial class Storage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateUpdateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WFManagermentFastFood.FastFoddService.Product ProductField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantityField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DateUpdate {
+            get {
+                return this.DateUpdateField;
+            }
+            set {
+                if ((this.DateUpdateField.Equals(value) != true)) {
+                    this.DateUpdateField = value;
+                    this.RaisePropertyChanged("DateUpdate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WFManagermentFastFood.FastFoddService.Product Product {
+            get {
+                return this.ProductField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductField, value) != true)) {
+                    this.ProductField = value;
+                    this.RaisePropertyChanged("Product");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductIDField, value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
                 }
             }
         }
@@ -907,6 +1125,99 @@ namespace WFManagermentFastFood.FastFoddService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OrderImport", Namespace="http://schemas.datacontract.org/2004/07/WCFServiceFastFood")]
+    [System.SerializableAttribute()]
+    public partial class OrderImport : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> DateImportField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WFManagermentFastFood.FastFoddService.OrderImportDetail[] OrderImportDetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrderImportIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> TotalPriceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> DateImport {
+            get {
+                return this.DateImportField;
+            }
+            set {
+                if ((this.DateImportField.Equals(value) != true)) {
+                    this.DateImportField = value;
+                    this.RaisePropertyChanged("DateImport");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WFManagermentFastFood.FastFoddService.OrderImportDetail[] OrderImportDetails {
+            get {
+                return this.OrderImportDetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderImportDetailsField, value) != true)) {
+                    this.OrderImportDetailsField = value;
+                    this.RaisePropertyChanged("OrderImportDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrderImportID {
+            get {
+                return this.OrderImportIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderImportIDField, value) != true)) {
+                    this.OrderImportIDField = value;
+                    this.RaisePropertyChanged("OrderImportID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> TotalPrice {
+            get {
+                return this.TotalPriceField;
+            }
+            set {
+                if ((this.TotalPriceField.Equals(value) != true)) {
+                    this.TotalPriceField = value;
+                    this.RaisePropertyChanged("TotalPrice");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FastFoddService.IFastFoodService")]
     public interface IFastFoodService {
@@ -1009,6 +1320,24 @@ namespace WFManagermentFastFood.FastFoddService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFastFoodService/getOrderDetailReprort", ReplyAction="http://tempuri.org/IFastFoodService/getOrderDetailReprortResponse")]
         WFManagermentFastFood.FastFoddService.OrderDetail[] getOrderDetailReprort(string OrderID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFastFoodService/InsertOrderImport", ReplyAction="http://tempuri.org/IFastFoodService/InsertOrderImportResponse")]
+        bool InsertOrderImport(WFManagermentFastFood.FastFoddService.OrderImport orderImport);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFastFoodService/InsertOrderImportDetail", ReplyAction="http://tempuri.org/IFastFoodService/InsertOrderImportDetailResponse")]
+        bool InsertOrderImportDetail(WFManagermentFastFood.FastFoddService.OrderImportDetail orderImportDetail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFastFoodService/GetProductInStorage", ReplyAction="http://tempuri.org/IFastFoodService/GetProductInStorageResponse")]
+        WFManagermentFastFood.FastFoddService.Storage GetProductInStorage(string productID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFastFoodService/InsertProductToStorage", ReplyAction="http://tempuri.org/IFastFoodService/InsertProductToStorageResponse")]
+        bool InsertProductToStorage(string productID, int quantity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFastFoodService/UpdateProductToStorage", ReplyAction="http://tempuri.org/IFastFoodService/UpdateProductToStorageResponse")]
+        bool UpdateProductToStorage(string productID, int quantity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFastFoodService/Storage", ReplyAction="http://tempuri.org/IFastFoodService/StorageResponse")]
+        WFManagermentFastFood.FastFoddService.Storage[] Storage(System.DateTime date);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1168,6 +1497,30 @@ namespace WFManagermentFastFood.FastFoddService {
         
         public WFManagermentFastFood.FastFoddService.OrderDetail[] getOrderDetailReprort(string OrderID) {
             return base.Channel.getOrderDetailReprort(OrderID);
+        }
+        
+        public bool InsertOrderImport(WFManagermentFastFood.FastFoddService.OrderImport orderImport) {
+            return base.Channel.InsertOrderImport(orderImport);
+        }
+        
+        public bool InsertOrderImportDetail(WFManagermentFastFood.FastFoddService.OrderImportDetail orderImportDetail) {
+            return base.Channel.InsertOrderImportDetail(orderImportDetail);
+        }
+        
+        public WFManagermentFastFood.FastFoddService.Storage GetProductInStorage(string productID) {
+            return base.Channel.GetProductInStorage(productID);
+        }
+        
+        public bool InsertProductToStorage(string productID, int quantity) {
+            return base.Channel.InsertProductToStorage(productID, quantity);
+        }
+        
+        public bool UpdateProductToStorage(string productID, int quantity) {
+            return base.Channel.UpdateProductToStorage(productID, quantity);
+        }
+        
+        public WFManagermentFastFood.FastFoddService.Storage[] Storage(System.DateTime date) {
+            return base.Channel.Storage(date);
         }
     }
 }

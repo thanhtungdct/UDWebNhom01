@@ -34,15 +34,14 @@ namespace WFManagermentFastFood
         {
             try
             {
-                int rowIndex = e.RowIndex;
-                DataGridViewRow row = dataGridViewCategory.Rows[rowIndex];
-                int cateID = int.Parse(row.Cells["ID"].Value.ToString());
+                int rowIndex = e.RowIndex;// lấy ra chỉ số dòng hiên tại
+                DataGridViewRow row = dataGridViewCategory.Rows[rowIndex];// lấy ra dong hiện tại
+                int cateID = int.Parse(row.Cells["ID"].Value.ToString());// lấy giá trị của ô ID
                 Category cate = new Category();
-                cate = db.getCategoryByID(cateID);
+                cate = db.getCategoryByID(cateID);// lấy danh mục theo id
                 txtCategoryID.Text = cate.ID.ToString();
+                txtCategoryID.Enabled = false;
                 txtCategoryName.Text = cate.CategoryName;
-                txtCategoryID.Text = "";
-                txtCategoryName.Text = "";
                 Enable("xoasua");
             }
             catch { 
@@ -76,6 +75,7 @@ namespace WFManagermentFastFood
         {
             Enable("them");
             txtCategoryName.Text = "";
+            txtCategoryID.Text = "";
             txtCategoryID.Enabled = true;
         }
 
@@ -85,10 +85,16 @@ namespace WFManagermentFastFood
             {
                 Category cate = new Category()
                 {
-                    CategoryName = txtCategoryName.Text
+                    
+                    CategoryName = txtCategoryName.Text,
+                    ID = Convert.ToInt32(txtCategoryID.Text)
                 };
-                db.insertCategory(cate);
+                db.insertCategory(cate);// thêm mới danh mục vào csdl
                 LoadData();
+                txtCategoryID.Enabled = false;
+                txtCategoryID.Text = "";
+                txtCategoryName.Text = "";
+                Enable("load");
                 MessageBox.Show("Thêm thành công");
 
             }
@@ -102,27 +108,35 @@ namespace WFManagermentFastFood
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            if (txtCategoryID.Text != "")
+            try
             {
-                int cateID =int.Parse( txtCategoryID.Text);
-                if (MessageBox.Show(String.Format("Bạn có chắc muốn xóa danh mục đã chọn"), "Xác Nhận xóa",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (txtCategoryID.Text != "")
                 {
-                    if (db.deteteCategory(cateID) == true)
+                    int cateID = int.Parse(txtCategoryID.Text);
+                    if (MessageBox.Show(String.Format("Bạn có chắc muốn xóa danh mục đã chọn"), "Xác Nhận xóa",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        MessageBox.Show("Xóa thành công !");
-                        LoadData();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Xóa thất bại !");
+                        if (db.deteteCategory(cateID) == true)// nếu xóa danh mục thành công thông báo
+                        {
+                            MessageBox.Show("Xóa thành công !");
+                            LoadData();
+                            txtCategoryID.Enabled = false;
+                            txtCategoryID.Text = "";
+                            txtCategoryName.Text = "";
+                            Enable("load");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa thất bại !");
+                        }
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Chon sản danh mục muốn xóa !");
+                }
             }
-            else
-            {
-                MessageBox.Show("Chon sản danh mục muốn xóa !");
-            }
+            catch { }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -132,11 +146,13 @@ namespace WFManagermentFastFood
                 int cateID = int.Parse(txtCategoryID.Text);
                 Category cate = db.getCategoryByID(cateID);
                 cate.CategoryName = txtCategoryName.Text;
-                db.updateCategory(cate);
+                db.updateCategory(cate);// sửa danh mục
                 LoadData();
+                txtCategoryID.Enabled = false;
+                Enable("load");
+                txtCategoryID.Text = "";
+                txtCategoryName.Text = "";
                 MessageBox.Show("Sửa thành công !");
-
-
             }
             catch {
                 MessageBox.Show("Sửa thất bại !");

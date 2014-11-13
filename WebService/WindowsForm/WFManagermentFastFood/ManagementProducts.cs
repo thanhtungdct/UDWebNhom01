@@ -26,24 +26,30 @@ namespace WFManagermentFastFood
 
         private void btnBrowser_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog dlg = new OpenFileDialog())
+            try
             {
-                dlg.Title = "Open Image";
-                dlg.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif|PNG Image|*.png";
-
-                if (dlg.ShowDialog() == DialogResult.OK)
+                using (OpenFileDialog dlg = new OpenFileDialog())
                 {
-                    try
+                    dlg.Title = "Open Image";
+                    dlg.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif|PNG Image|*.png";// chọn các kiểu file cho phép mở
+
+                    if (dlg.ShowDialog() == DialogResult.OK)
                     {
-                        pictureBox1.Image = new Bitmap(Image.FromFile(dlg.FileName), this.pictureBox1.Width, this.pictureBox1.Height);
-                        this.txtImage.Text = dlg.FileName.ToString();
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Dung lượng ảnh quá lớn.Vui lòng chọn ảnh khác", "Lỗi chọn ảnh");
+                        try
+                        {
+                            pictureBox1.Image = new Bitmap(Image.FromFile(dlg.FileName), this.pictureBox1.Width, this.pictureBox1.Height);
+                            // hiển thị hình đã chọn vào pictureBox1
+                            this.txtImage.Text = dlg.FileName.ToString();
+                            //gán đường dẫn vào textbox
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Dung lượng ảnh quá lớn.Vui lòng chọn ảnh khác", "Lỗi chọn ảnh");
+                        }
                     }
                 }
             }
+            catch { }
         }
 
         public void Enable(string acction)
@@ -71,24 +77,7 @@ namespace WFManagermentFastFood
         public void loadData()
         {
             dataGridViewProduct.DataSource = db.getAllProduct();
-
-            //List<productCustomize> list = new List<productCustomize>();
-            //foreach (Product p in db.getAllProduct())
-            //{
-            //    productCustomize p1 = new productCustomize()
-            //    {
-            //        ProductID = p.ProductID,
-            //        ProductName = p.ProductName,
-            //        Discount = (int)p.Discount,
-            //        Display = (bool)p.Display,
-            //        UnitPrice = (double)p.UnitPrice,
-            //        CategoryID = (int)p.CategoryID
-            //    };
-            //    list.Add(p1);
-            //}
-            //dataGridViewProduct.DataSource = list;
-
-
+            //load datasource vao combobox category
             comboBoxCategory.DataSource = db.getAllCategory();
             comboBoxCategory.DisplayMember = "CategoryName";
             comboBoxCategory.ValueMember = "ID";
@@ -100,21 +89,27 @@ namespace WFManagermentFastFood
         {
             Product product = new Product();
             getData(product);
-            if (db.insertProduct(product) == true)
+            if (product.ProductID != null &&product.Description != null&& product.ProductName != null && product.UnitPrice != null && product.Image != null)
             {
-                MessageBox.Show("Thêm sản phẩm thành công !");
+                if (db.insertProduct(product) == true)
+                {
+                    MessageBox.Show("Thêm sản phẩm thành công !");
+                }
+                else
+                {
+                    MessageBox.Show("Thêm sản phẩm thất bại !");
+                }
+                loadData();
             }
             else
-            {
-                MessageBox.Show("Thêm sản phẩm thất bại !");
-            }
-            loadData();
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
 
         }
 
         private void dataGridViewProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            try
+            {
                 Enable("xoasua");
                 int rowIndex = e.RowIndex;
                 DataGridViewRow row = dataGridViewProduct.Rows[rowIndex];
@@ -125,8 +120,8 @@ namespace WFManagermentFastFood
                 txtProductID.Text = p.ProductID;
                 txtProductName.Text = p.ProductName;
                 txtUnitPrice.Text = p.UnitPrice.ToString();
-                txtVote.Text = p.Vote.ToString();
-                txtDiscount.Text = p.Discount.ToString();
+                //txtVote.Text = p.Vote.ToString();
+                // txtDiscount.Text = p.Discount.ToString();
                 txtDescription.Text = p.Description;
                 checkBoxDisplay.Checked = (bool)p.Display;
                 comboBoxCategory.SelectedValue = p.CategoryID;
@@ -139,7 +134,9 @@ namespace WFManagermentFastFood
                     Image RetImage = Image.FromStream(ms1);
                     pictureBox1.Image = RetImage;
                 }
-            
+            }
+            catch { }
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -160,74 +157,66 @@ namespace WFManagermentFastFood
 
         public Product getData(Product p)
         {
+            try
+            {
 
-            p.ProductID = txtProductID.Text;
-            //ProductName
-            if (txtProductName.Text == "" || txtUnitPrice.Text == "" || txtDiscount.Text == "" || txtVote.Text == ""
-                || txtDescription.Text == ""
-                )
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
-            }
-            else
-            {
-                //UnitPrice
+                p.ProductID = txtProductID.Text;
+
                 p.UnitPrice = Int32.Parse(txtUnitPrice.Text);
                 p.ProductName = txtProductName.Text;
 
-                //Discount
-                p.Discount = Int32.Parse(txtDiscount.Text);
-                //Vote
-                p.Vote = Int32.Parse(txtVote.Text);
-                //Display
                 if (checkBoxDisplay.Checked)
                 {
                     p.Display = true;
 
                 }
                 else
-                    p.Display = false;
-
-                //Description
+                p.Display = false;
                 p.Description = txtDescription.Text;
                 p.CategoryID = Int32.Parse(comboBoxCategory.SelectedValue.ToString());
-            }
 
-            if (txtImage.Text != "")
-            {
-                MemoryStream ms1 = new MemoryStream();
-                pictureBox1.Image.Save(ms1, System.Drawing.Imaging.ImageFormat.Jpeg);
-                byte[] img_arr1 = ms1.ToArray();
-                p.Image = img_arr1;
+
+               
+                    MemoryStream ms1 = new MemoryStream();
+                    pictureBox1.Image.Save(ms1, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    byte[] img_arr1 = ms1.ToArray();
+                    p.Image = img_arr1;
+                
+
+                return p;
             }
-            return p;
+            catch { return p; }
 
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (txtProductID.Text != "")
+            try
             {
-                string product = txtProductID.Text;
-                if (MessageBox.Show(String.Format("Bạn có chắc muốn xóa sản phẩm đã chọn"), "Xác Nhận xóa",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (txtProductID.Text != "")
                 {
-                    if (db.deleteProduct(product) == true)
+                    string product = txtProductID.Text;
+                    if (MessageBox.Show(String.Format("Bạn có chắc muốn xóa sản phẩm đã chọn"), "Xác Nhận xóa",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        MessageBox.Show("Xóa thành công !");
-                        loadData();
-                        clearData();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Xóa thất bại !");
+                        if (db.deleteProduct(product) == true)
+                        {
+                            MessageBox.Show("Xóa thành công !");
+                            loadData();
+                            clearData();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa thất bại !");
+                        }
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Chon sản phẩm muốn xóa !");
+                }
             }
-            else
-            {
-                MessageBox.Show("Chon sản phẩm muốn xóa !");
-            }
+            catch { }
         }
         public void clearData()
         {
@@ -235,10 +224,9 @@ namespace WFManagermentFastFood
             Enable("them");
             txtProductName.Text = "";
             txtUnitPrice.Text = "";
-            txtDiscount.Text = ""; txtVote.Text = "";
             txtDescription.Text = "";
             txtProductID.Text = "";
-            txtVote.Text = "";
+            txtImage.Text = "";
             pictureBox1.Image = null;
         }
 
@@ -250,43 +238,13 @@ namespace WFManagermentFastFood
         private void btnSearxh_Click(object sender, EventArgs e)
         {
             string search = txtSearch.Text;
+            dataGridViewProduct.DataSource = db.search(search);
 
-            //List<productCustomize> list = new List<productCustomize>();
-            //foreach (Product p in db.search(search))
-            //{
-            //    productCustomize p1 = new productCustomize()
-            //    {
-            //        ProductID = p.ProductID,
-            //        ProductName = p.ProductName,
-            //        Discount = (int)p.Discount,
-            //        Display = (bool)p.Display,
-            //        UnitPrice = (double)p.UnitPrice,
-            //        CategoryID = (int)p.CategoryID
-            //    };
-            //    list.Add(p1);
-            //}
-            //if (list.Count() > 0)
-            //{
-            //    dataGridViewProduct.DataSource = list;
-            //}
-            //else
-            //{
-            //    List<productCustomize> list1 = new List<productCustomize>();
-            //    foreach (Product p in db.getAllProduct())
-            //    {
-            //        productCustomize p1 = new productCustomize()
-            //        {
-            //            ProductID = p.ProductID,
-            //            ProductName = p.ProductName,
-            //            Discount = (int)p.Discount,
-            //            Display = (bool)p.Display,
-            //            UnitPrice = (double)p.UnitPrice,
-            //            CategoryID = (int)p.CategoryID
-            //        };
-            //        list1.Add(p1);
-            //    }
-            //    dataGridViewProduct.DataSource = list1;
-            //}
+        }
+
+        private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

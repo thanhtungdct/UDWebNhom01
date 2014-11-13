@@ -51,11 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormReport.cs">
+    <Compile Include="ManagementReportFile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormReport.Designer.cs">
-      <DependentUpon>FormReport.cs</DependentUpon>
+    <Compile Include="ManagementReportFile.Designer.cs">
+      <DependentUpon>ManagementReportFile.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -99,6 +99,12 @@
     <Compile Include="ManagementReport.Designer.cs">
       <DependentUpon>ManagementReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagementStorage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagementStorage.Designer.cs">
+      <DependentUpon>ManagementStorage.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagementUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,14 +114,14 @@
     <Compile Include="productCustomize.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ComboboxItem.cs" />
     <Compile Include="Service References\FastFoddService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="ComboboxItem.cs" />
-    <EmbeddedResource Include="FormReport.resx">
-      <DependentUpon>FormReport.cs</DependentUpon>
+    <EmbeddedResource Include="ManagementReportFile.resx">
+      <DependentUpon>ManagementReportFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -138,6 +144,9 @@
     <EmbeddedResource Include="ManagementReport.resx">
       <DependentUpon>ManagementReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagementStorage.resx">
+      <DependentUpon>ManagementStorage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagementUser.resx">
       <DependentUpon>ManagementUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,11 +163,14 @@
     <EmbeddedResource Include="Reports\ReportDDay.rdlc" />
     <EmbeddedResource Include="Reports\ReportMonth.rdlc" />
     <EmbeddedResource Include="Reports\ReportQuarter.rdlc" />
+    <EmbeddedResource Include="Reports\ReportStorage.rdlc" />
     <EmbeddedResource Include="Reports\ReportYear.rdlc" />
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\DataSources\ManagementReport.datasource" />
+    <None Include="Properties\DataSources\productCustomize.datasource" />
+    <None Include="Properties\DataSources\WFManagermentFastFood.FastFoddService.OrderImportDetail.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -168,14 +180,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Service References\FastFoddService\service1.wsdl" />
-    <None Include="Service References\FastFoddService\service2.xsd">
+    <None Include="Service References\FastFoddService\service.wsdl" />
+    <None Include="Service References\FastFoddService\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FastFoddService\service21.xsd">
+    <None Include="Service References\FastFoddService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FastFoddService\WCFServiceFastFood1.xsd">
+    <None Include="Service References\FastFoddService\WCFServiceFastFood.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\FastFoddService\WFManagermentFastFood.FastFoddService.Account.datasource">
@@ -193,27 +205,15 @@
     <None Include="Service References\FastFoddService\WFManagermentFastFood.FastFoddService.Product.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\FastFoddService\WFManagermentFastFood.FastFoddService.Storage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\FastFoddService\WFManagermentFastFood.FastFoddService.UserType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\FastFoddService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\FastFoddService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\FastFoddService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\FastFoddService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\catelogy.png" />
@@ -239,7 +239,21 @@
   <ItemGroup>
     <None Include="Resources\1chart.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\FastFoddService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FastFoddService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FastFoddService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FastFoddService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

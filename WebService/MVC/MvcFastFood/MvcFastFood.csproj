@@ -153,11 +153,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\FastFoodSevice\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\bootstrap.css" />
@@ -271,6 +266,8 @@
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\_references.js" />
+    <None Include="Service References\FastFoodServiceWeb\configuration91.svcinfo" />
+    <None Include="Service References\FastFoodServiceWeb\configuration.svcinfo" />
     <Content Include="Service References\FastFoodServiceWeb\MvcFastFood.FastFoodServiceWeb.Account.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -280,43 +277,7 @@
     <Content Include="Service References\FastFoodServiceWeb\MvcFastFood.FastFoodServiceWeb.Product.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\FastFoodServiceWeb\service.wsdl" />
-    <None Include="Service References\FastFoodServiceWeb\service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FastFoodServiceWeb\service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FastFoodServiceWeb\WCFServiceFastFood.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FastFoodSevice\configuration91.svcinfo" />
-    <None Include="Service References\FastFoodSevice\configuration.svcinfo" />
-    <None Include="Service References\FastFoodServiceWeb\configuration91.svcinfo" />
-    <None Include="Service References\FastFoodServiceWeb\configuration.svcinfo" />
     <None Include="Service References\FastFoodServiceWeb\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <Content Include="Service References\FastFoodSevice\MvcFastFood.FastFoodSevice.Account.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\FastFoodSevice\MvcFastFood.FastFoodSevice.Category.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\FastFoodSevice\MvcFastFood.FastFoodSevice.Order.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\FastFoodSevice\MvcFastFood.FastFoodSevice.OrderDetail.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\FastFoodSevice\MvcFastFood.FastFoodSevice.Product.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\FastFoodSevice\MvcFastFood.FastFoodSevice.UserType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <None Include="Service References\FastFoodSevice\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -334,16 +295,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <None Include="Service References\FastFoodSevice\service1.wsdl" />
-    <None Include="Service References\FastFoodSevice\service2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FastFoodSevice\service21.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FastFoodSevice\WCFServiceFastFood1.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Views\Home\getCategory.cshtml" />
     <Content Include="Views\Home\getProductByCategory.cshtml" />
     <Content Include="Views\Home\getProductByID.cshtml" />
@@ -357,6 +308,16 @@
     <Content Include="Views\Login\Register.cshtml" />
     <Content Include="Views\Home\Map.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
+    <None Include="Service References\FastFoodServiceWeb\service.wsdl" />
+    <None Include="Service References\FastFoodServiceWeb\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FastFoodServiceWeb\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FastFoodServiceWeb\WCFServiceFastFood.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -369,7 +330,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\FastFoodServiceWeb\" />
-    <WCFMetadataStorage Include="Service References\FastFoodSevice\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

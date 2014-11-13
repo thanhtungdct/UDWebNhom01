@@ -28,40 +28,40 @@ namespace WFManagermentFastFood
       
         public void loadData(Order[] s,DataGridView dtgv,Label lb)
         {
-
-
-            double totalprice = 0;
-
-            List<productCustomize> list = new List<productCustomize>();
-
-            foreach (Order x in s)
+            try
             {
-                OrderDetail[] or = db.getOrderDetailReprort(x.OrderID);
-                foreach (OrderDetail ordt in or)
+                double totalprice = 0;
+                List<productCustomize> list = new List<productCustomize>();
+                foreach (Order x in s)
                 {
-                    totalprice += x.TotalPrice;
-                    productCustomize prc = new productCustomize();
-                    prc.ProductID = ordt.ProductID;
-                    prc.Quantity = ordt.Quantity;
-                    prc.UnitPrice = ordt.UnitPrice;
-                    //prc.ProductName = ordt.Product.ProductName;
-                    var p = list.Where(c => c.ProductID == prc.ProductID).FirstOrDefault();
-                    if (p != null)
+                    OrderDetail[] or = db.getOrderDetailReprort(x.OrderID);
+                    foreach (OrderDetail ordt in or)
                     {
-                        p.Quantity += prc.Quantity;
+                        totalprice += x.TotalPrice;
+                        productCustomize prc = new productCustomize();
+                        prc.ProductID = ordt.ProductID;
+                        prc.Quantity = ordt.Quantity;
+                        prc.UnitPrice = ordt.UnitPrice;
+                        //prc.ProductName = ordt.Product.ProductName;
+                        var p = list.Where(c => c.ProductID == prc.ProductID).FirstOrDefault();
+                        if (p != null)
+                        {
+                            p.Quantity += prc.Quantity;
+                        }
+                        else
+                        {
+                            list.Add(prc);
+                        }
                     }
-                    else
-                    {
-                        list.Add(prc);
-                    }
+
+
                 }
-
-
+                string price = String.Format("{0:0,0 VNĐ}", Convert.ToInt32(totalprice));
+                lb.Text = price;
+                list = list.OrderByDescending(p => p.Quantity).ToList();
+                dtgv.DataSource = list;
             }
-            string price = String.Format("{0:0,0 VNĐ}", Convert.ToInt32(totalprice));
-            lb.Text = price;
-            list = list.OrderByDescending(p => p.Quantity).ToList();
-            dtgv.DataSource = list;
+            catch { }
 
         }
         private void tabPage1_Click(object sender, EventArgs e)
@@ -101,7 +101,7 @@ namespace WFManagermentFastFood
                 loadData(s, dataGridViewProductQuarter, lbTotalQuarter);
             }
         }
-        public void LoaderDataForCombobox()
+        public void LoaderDataForCombobox()// load du lieu vao combobox 
         {
             List<ComboboxItem> list = new List<ComboboxItem>();
             for (int i = 2000; i < 2050; i++)
@@ -122,6 +122,12 @@ namespace WFManagermentFastFood
 
         private void tabPage3_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btnFile_Click(object sender, EventArgs e)
+        {
+            ManagementReportFile f = new ManagementReportFile();
+            f.Show();
         }
 
     }

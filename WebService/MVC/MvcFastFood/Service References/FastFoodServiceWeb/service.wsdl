@@ -19,11 +19,11 @@
   <wsdl:message name="IWedMVC_getProductByID_OutputMessage">
     <wsdl:part name="parameters" element="tns:getProductByIDResponse" />
   </wsdl:message>
-  <wsdl:message name="IWedMVC_search_InputMessage">
-    <wsdl:part name="parameters" element="tns:search" />
+  <wsdl:message name="IWedMVC_getProductByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductByName" />
   </wsdl:message>
-  <wsdl:message name="IWedMVC_search_OutputMessage">
-    <wsdl:part name="parameters" element="tns:searchResponse" />
+  <wsdl:message name="IWedMVC_getProductByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductByNameResponse" />
   </wsdl:message>
   <wsdl:message name="IWedMVC_getProductByCategory_InputMessage">
     <wsdl:part name="parameters" element="tns:getProductByCategory" />
@@ -36,12 +36,6 @@
   </wsdl:message>
   <wsdl:message name="IWedMVC_getAllCategory_OutputMessage">
     <wsdl:part name="parameters" element="tns:getAllCategoryResponse" />
-  </wsdl:message>
-  <wsdl:message name="IWedMVC_getProductByName_InputMessage">
-    <wsdl:part name="parameters" element="tns:getProductByName" />
-  </wsdl:message>
-  <wsdl:message name="IWedMVC_getProductByName_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getProductByNameResponse" />
   </wsdl:message>
   <wsdl:message name="IWedMVC_login_InputMessage">
     <wsdl:part name="parameters" element="tns:login" />
@@ -73,6 +67,18 @@
   <wsdl:message name="IWedMVC_insertOrderDetail_OutputMessage">
     <wsdl:part name="parameters" element="tns:insertOrderDetailResponse" />
   </wsdl:message>
+  <wsdl:message name="IWedMVC_UpdateProductToStorage_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductToStorage" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_UpdateProductToStorage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductToStorageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_CheckQuantity_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckQuantity" />
+  </wsdl:message>
+  <wsdl:message name="IWedMVC_CheckQuantity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckQuantityResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWedMVC">
     <wsdl:operation name="getAllProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/IWedMVC/getAllProduct" message="tns:IWedMVC_getAllProduct_InputMessage" />
@@ -82,9 +88,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWedMVC/getProductByID" message="tns:IWedMVC_getProductByID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWedMVC/getProductByIDResponse" message="tns:IWedMVC_getProductByID_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="search">
-      <wsdl:input wsaw:Action="http://tempuri.org/IWedMVC/search" message="tns:IWedMVC_search_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IWedMVC/searchResponse" message="tns:IWedMVC_search_OutputMessage" />
+    <wsdl:operation name="getProductByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWedMVC/getProductByName" message="tns:IWedMVC_getProductByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWedMVC/getProductByNameResponse" message="tns:IWedMVC_getProductByName_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getProductByCategory">
       <wsdl:input wsaw:Action="http://tempuri.org/IWedMVC/getProductByCategory" message="tns:IWedMVC_getProductByCategory_InputMessage" />
@@ -93,10 +99,6 @@
     <wsdl:operation name="getAllCategory">
       <wsdl:input wsaw:Action="http://tempuri.org/IWedMVC/getAllCategory" message="tns:IWedMVC_getAllCategory_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWedMVC/getAllCategoryResponse" message="tns:IWedMVC_getAllCategory_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="getProductByName">
-      <wsdl:input wsaw:Action="http://tempuri.org/IWedMVC/getProductByName" message="tns:IWedMVC_getProductByName_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IWedMVC/getProductByNameResponse" message="tns:IWedMVC_getProductByName_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="login">
       <wsdl:input wsaw:Action="http://tempuri.org/IWedMVC/login" message="tns:IWedMVC_login_InputMessage" />
@@ -117,6 +119,14 @@
     <wsdl:operation name="insertOrderDetail">
       <wsdl:input wsaw:Action="http://tempuri.org/IWedMVC/insertOrderDetail" message="tns:IWedMVC_insertOrderDetail_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWedMVC/insertOrderDetailResponse" message="tns:IWedMVC_insertOrderDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductToStorage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWedMVC/UpdateProductToStorage" message="tns:IWedMVC_UpdateProductToStorage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWedMVC/UpdateProductToStorageResponse" message="tns:IWedMVC_UpdateProductToStorage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckQuantity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWedMVC/CheckQuantity" message="tns:IWedMVC_CheckQuantity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWedMVC/CheckQuantityResponse" message="tns:IWedMVC_CheckQuantity_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IWedMVC" type="tns:IWedMVC">
@@ -139,8 +149,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="search">
-      <soap:operation soapAction="http://tempuri.org/IWedMVC/search" style="document" />
+    <wsdl:operation name="getProductByName">
+      <soap:operation soapAction="http://tempuri.org/IWedMVC/getProductByName" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -159,15 +169,6 @@
     </wsdl:operation>
     <wsdl:operation name="getAllCategory">
       <soap:operation soapAction="http://tempuri.org/IWedMVC/getAllCategory" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getProductByName">
-      <soap:operation soapAction="http://tempuri.org/IWedMVC/getProductByName" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -213,6 +214,24 @@
     </wsdl:operation>
     <wsdl:operation name="insertOrderDetail">
       <soap:operation soapAction="http://tempuri.org/IWedMVC/insertOrderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductToStorage">
+      <soap:operation soapAction="http://tempuri.org/IWedMVC/UpdateProductToStorage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckQuantity">
+      <soap:operation soapAction="http://tempuri.org/IWedMVC/CheckQuantity" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

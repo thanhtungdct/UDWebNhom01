@@ -1,134 +1,100 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="WatchesDatabaseModelStoreContainer" CdmEntityContainer="WatchesDatabaseEntities">
-    <EntitySetMapping Name="CHI_TIET_HDB">
-      <EntityTypeMapping TypeName="WatchesDatabaseModel.CHI_TIET_HDB">
-        <MappingFragment StoreEntitySet="CHI_TIET_HDB">
-          <ScalarProperty Name="MaHDB" ColumnName="MaHDB" />
-          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
-          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-          <ScalarProperty Name="Gia" ColumnName="Gia" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CHI_TIET_HDN">
-      <EntityTypeMapping TypeName="WatchesDatabaseModel.CHI_TIET_HDN">
-        <MappingFragment StoreEntitySet="CHI_TIET_HDN">
-          <ScalarProperty Name="MaHDN" ColumnName="MaHDN" />
-          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
-          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-          <ScalarProperty Name="GiaTien" ColumnName="GiaTien" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CUA_HANG">
-      <EntityTypeMapping TypeName="WatchesDatabaseModel.CUA_HANG">
-        <MappingFragment StoreEntitySet="CUA_HANG">
-          <ScalarProperty Name="MaCuaHang" ColumnName="MaCuaHang" />
-          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-          <ScalarProperty Name="SDT" ColumnName="SDT" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="HOA_DON_BAN">
-      <EntityTypeMapping TypeName="WatchesDatabaseModel.HOA_DON_BAN">
-        <MappingFragment StoreEntitySet="HOA_DON_BAN">
-          <ScalarProperty Name="MaHDB" ColumnName="MaHDB" />
-          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
-          <ScalarProperty Name="TenNguoiNhan" ColumnName="TenNguoiNhan" />
+  <EntityContainerMapping StorageEntityContainer="FastFoodModelStoreContainer" CdmEntityContainer="FastFoodEntities">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="FastFoodModel.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
           <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="SDT" ColumnName="SDT" />
-          <ScalarProperty Name="DiaChiGiaoHang" ColumnName="DiaChiGiaoHang" />
-          <ScalarProperty Name="NgayDatHang" ColumnName="NgayDatHang" />
-          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
-          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="HOA_DON_NHAP">
-      <EntityTypeMapping TypeName="WatchesDatabaseModel.HOA_DON_NHAP">
-        <MappingFragment StoreEntitySet="HOA_DON_NHAP">
-          <ScalarProperty Name="MaHDN" ColumnName="MaHDN" />
-          <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
-          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="FastFoodModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="KHACH_HANG">
-      <EntityTypeMapping TypeName="WatchesDatabaseModel.KHACH_HANG">
-        <MappingFragment StoreEntitySet="KHACH_HANG">
-          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
-          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
-          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="FastFoodModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="RecipientAddress" ColumnName="RecipientAddress" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="SDT" ColumnName="SDT" />
-          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-          <ScalarProperty Name="Quyen" ColumnName="Quyen" />
-          <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
+          <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="KHOes">
-      <EntityTypeMapping TypeName="WatchesDatabaseModel.KHO">
-        <MappingFragment StoreEntitySet="KHO">
-          <ScalarProperty Name="MaCuaHang" ColumnName="MaCuaHang" />
-          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
-          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="FastFoodModel.OrderDetail">
+        <MappingFragment StoreEntitySet="OrderDetail">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="LOAI_SPHAM">
-      <EntityTypeMapping TypeName="WatchesDatabaseModel.LOAI_SPHAM">
-        <MappingFragment StoreEntitySet="LOAI_SPHAM">
-          <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
-          <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
+    <EntitySetMapping Name="OrderImports">
+      <EntityTypeMapping TypeName="FastFoodModel.OrderImport">
+        <MappingFragment StoreEntitySet="OrderImport">
+          <ScalarProperty Name="OrderImportID" ColumnName="OrderImportID" />
+          <ScalarProperty Name="DateImport" ColumnName="DateImport" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="NHA_CCAP">
-      <EntityTypeMapping TypeName="WatchesDatabaseModel.NHA_CCAP">
-        <MappingFragment StoreEntitySet="NHA_CCAP">
-          <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
-          <ScalarProperty Name="TenNCC" ColumnName="TenNCC" />
-          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-          <ScalarProperty Name="SDT" ColumnName="SDT" />
+    <EntitySetMapping Name="OrderImportDetails">
+      <EntityTypeMapping TypeName="FastFoodModel.OrderImportDetail">
+        <MappingFragment StoreEntitySet="OrderImportDetail">
+          <ScalarProperty Name="OrderImportID" ColumnName="OrderImportID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="QUYEN_TRUY_CAP">
-      <EntityTypeMapping TypeName="WatchesDatabaseModel.QUYEN_TRUY_CAP">
-        <MappingFragment StoreEntitySet="QUYEN_TRUY_CAP">
-          <ScalarProperty Name="MaQuyen" ColumnName="MaQuyen" />
-          <ScalarProperty Name="TenQuyen" ColumnName="TenQuyen" />
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="FastFoodModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Display" ColumnName="Display" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SAN_PHAM">
-      <EntityTypeMapping TypeName="WatchesDatabaseModel.SAN_PHAM">
-        <MappingFragment StoreEntitySet="SAN_PHAM">
-          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
-          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
-          <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
-          <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
-          <ScalarProperty Name="Mau" ColumnName="Mau" />
-          <ScalarProperty Name="BaoHanh" ColumnName="BaoHanh" />
-          <ScalarProperty Name="XuatXu" ColumnName="XuatXu" />
-          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
-          <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
-          <ScalarProperty Name="LuotXem" ColumnName="LuotXem" />
-          <ScalarProperty Name="LuotLike" ColumnName="LuotLike" />
-          <ScalarProperty Name="GiamGia" ColumnName="GiamGia" />
+    <EntitySetMapping Name="Storages">
+      <EntityTypeMapping TypeName="FastFoodModel.Storage">
+        <MappingFragment StoreEntitySet="Storage">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="WatchesDatabaseModel.sysdiagram">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
+    <EntitySetMapping Name="UserTypes">
+      <EntityTypeMapping TypeName="FastFoodModel.UserType">
+        <MappingFragment StoreEntitySet="UserType">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserType1" ColumnName="UserType" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

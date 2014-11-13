@@ -13,6 +13,7 @@ namespace MvcFastFood.Models
         public int Quantity { get; set; }
         public double UnitPrice { get; set; }
         public int Discount { get; set; }
+        public int totalQuantity { get; set; }
         public byte[] Image { get; set; }
 
         public static List<Cart> myCart{

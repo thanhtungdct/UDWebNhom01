@@ -1,283 +1,249 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="WatchesDatabaseModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-  <EntityType Name="CHI_TIET_HDB">
+<Schema Namespace="FastFoodModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="Account">
     <Key>
-      <PropertyRef Name="MaHDB" />
-      <PropertyRef Name="MaSP" />
+      <PropertyRef Name="UserName" />
     </Key>
-    <Property Name="MaHDB" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="MaSP" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="SoLuong" Type="Int32" />
-    <Property Name="Gia" Type="Int32" />
-    <NavigationProperty Name="HOA_DON_BAN" Relationship="Self.FK_CHI_TIET_HDB_HOA_DON_BAN" FromRole="CHI_TIET_HDB" ToRole="HOA_DON_BAN" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserTypeID" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="UserType" Relationship="Self.FK_Account_UserType" FromRole="Account" ToRole="UserType" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_Order_Users" FromRole="Account" ToRole="Order" />
   </EntityType>
-  <EntityType Name="CHI_TIET_HDN">
+  <EntityType Name="Category">
     <Key>
-      <PropertyRef Name="MaHDN" />
-      <PropertyRef Name="MaSP" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="MaHDN" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="MaSP" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="SoLuong" Type="Int32" />
-    <Property Name="GiaTien" Type="Double" />
-    <NavigationProperty Name="HOA_DON_NHAP" Relationship="Self.FK_CHI_TIET_HDN_HOA_DON_NHAP" FromRole="CHI_TIET_HDN" ToRole="HOA_DON_NHAP" />
-    <NavigationProperty Name="SAN_PHAM" Relationship="Self.FK_CHI_TIET_HDN_SAN_PHAM" FromRole="CHI_TIET_HDN" ToRole="SAN_PHAM" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_Products_Category" FromRole="Category" ToRole="Products" />
   </EntityType>
-  <EntityType Name="CUA_HANG">
+  <EntityType Name="Order">
     <Key>
-      <PropertyRef Name="MaCuaHang" />
+      <PropertyRef Name="OrderID" />
     </Key>
-    <Property Name="MaCuaHang" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="SDT" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
-    <NavigationProperty Name="KHOes" Relationship="Self.FK_KHO_CUA_HANG" FromRole="CUA_HANG" ToRole="KHO" />
+    <Property Name="OrderID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RecipientAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TotalPrice" Type="Double" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateCreate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Payment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Account" Relationship="Self.FK_Order_Users" FromRole="Order" ToRole="Account" />
+    <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OderDetail_Order" FromRole="Order" ToRole="OrderDetail" />
   </EntityType>
-  <EntityType Name="HOA_DON_BAN">
+  <EntityType Name="OrderDetail">
     <Key>
-      <PropertyRef Name="MaHDB" />
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="ProductID" />
     </Key>
-    <Property Name="MaHDB" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="MaKH" Type="Int32" />
-    <Property Name="TenNguoiNhan" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-    <Property Name="Email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="SDT" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
-    <Property Name="DiaChiGiaoHang" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="NgayDatHang" Type="DateTime" Precision="0" />
-    <Property Name="TrangThai" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-    <Property Name="TongTien" Type="Double" />
-    <NavigationProperty Name="CHI_TIET_HDB" Relationship="Self.FK_CHI_TIET_HDB_HOA_DON_BAN" FromRole="HOA_DON_BAN" ToRole="CHI_TIET_HDB" />
+    <Property Name="OrderID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="UnitPrice" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_OderDetail_Order" FromRole="OrderDetail" ToRole="Order" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_OderDetail_Products" FromRole="OrderDetail" ToRole="Products" />
   </EntityType>
-  <EntityType Name="HOA_DON_NHAP">
+  <EntityType Name="OrderImport">
     <Key>
-      <PropertyRef Name="MaHDN" />
+      <PropertyRef Name="OrderImportID" />
     </Key>
-    <Property Name="MaHDN" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="NgayNhap" Type="DateTime" Precision="0" />
-    <Property Name="TongTien" Type="Double" />
-    <NavigationProperty Name="CHI_TIET_HDN" Relationship="Self.FK_CHI_TIET_HDN_HOA_DON_NHAP" FromRole="HOA_DON_NHAP" ToRole="CHI_TIET_HDN" />
+    <Property Name="OrderImportID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateImport" Type="DateTime" Precision="0" />
+    <Property Name="TotalPrice" Type="Double" />
+    <NavigationProperty Name="OrderImportDetails" Relationship="Self.FK_OrderImportDetail_OrderImport" FromRole="OrderImport" ToRole="OrderImportDetail" />
   </EntityType>
-  <EntityType Name="KHACH_HANG">
+  <EntityType Name="OrderImportDetail">
     <Key>
-      <PropertyRef Name="MaKH" />
+      <PropertyRef Name="OrderImportID" />
+      <PropertyRef Name="ProductID" />
     </Key>
-    <Property Name="MaKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="MatKhau" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-    <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="Email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="SDT" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
-    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="Quyen" Type="Int32" />
-    <Property Name="TaiKhoan" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-    <NavigationProperty Name="QUYEN_TRUY_CAP" Relationship="Self.FK_KHACH_HANG_QUYEN_TRUY_CAP" FromRole="KHACH_HANG" ToRole="QUYEN_TRUY_CAP" />
+    <Property Name="OrderImportID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="UnitPrice" Type="Double" />
+    <NavigationProperty Name="OrderImport" Relationship="Self.FK_OrderImportDetail_OrderImport" FromRole="OrderImportDetail" ToRole="OrderImport" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_OrderImportDetail_Products" FromRole="OrderImportDetail" ToRole="Products" />
   </EntityType>
-  <EntityType Name="KHO">
+  <EntityType Name="Product">
     <Key>
-      <PropertyRef Name="MaCuaHang" />
-      <PropertyRef Name="MaSP" />
+      <PropertyRef Name="ProductID" />
     </Key>
-    <Property Name="MaCuaHang" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="MaSP" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="SoLuong" Type="Int32" />
-    <NavigationProperty Name="CUA_HANG" Relationship="Self.FK_KHO_CUA_HANG" FromRole="KHO" ToRole="CUA_HANG" />
-    <NavigationProperty Name="SAN_PHAM" Relationship="Self.FK_KHO_SAN_PHAM" FromRole="KHO" ToRole="SAN_PHAM" />
+    <Property Name="ProductID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UnitPrice" Type="Double" />
+    <Property Name="Display" Type="Boolean" />
+    <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_Products_Category" FromRole="Products" ToRole="Category" />
+    <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OderDetail_Products" FromRole="Products" ToRole="OrderDetail" />
+    <NavigationProperty Name="OrderImportDetails" Relationship="Self.FK_OrderImportDetail_Products" FromRole="Products" ToRole="OrderImportDetail" />
+    <NavigationProperty Name="Storages" Relationship="Self.FK_Storage_Products" FromRole="Products" ToRole="Storage" />
   </EntityType>
-  <EntityType Name="LOAI_SPHAM">
+  <EntityType Name="Storage">
     <Key>
-      <PropertyRef Name="MaLoai" />
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="DateUpdate" />
     </Key>
-    <Property Name="MaLoai" Type="Int32" Nullable="false" />
-    <Property Name="TenLoai" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <NavigationProperty Name="SAN_PHAM" Relationship="Self.FK_SAN_PHAM_LOAI_SPHAM" FromRole="LOAI_SPHAM" ToRole="SAN_PHAM" />
+    <Property Name="ProductID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="DateUpdate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_Storage_Products" FromRole="Storage" ToRole="Products" />
   </EntityType>
-  <EntityType Name="NHA_CCAP">
+  <EntityType Name="UserType">
     <Key>
-      <PropertyRef Name="MaNCC" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="MaNCC" Type="Int32" Nullable="false" />
-    <Property Name="TenNCC" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="DiaChi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="SDT" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <NavigationProperty Name="SAN_PHAM" Relationship="Self.FK_SAN_PHAM_NHA_CCAP" FromRole="NHA_CCAP" ToRole="SAN_PHAM" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserType1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Accounts" Relationship="Self.FK_Account_UserType" FromRole="UserType" ToRole="Account" />
   </EntityType>
-  <EntityType Name="QUYEN_TRUY_CAP">
-    <Key>
-      <PropertyRef Name="MaQuyen" />
-    </Key>
-    <Property Name="MaQuyen" Type="Int32" Nullable="false" />
-    <Property Name="TenQuyen" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <NavigationProperty Name="KHACH_HANG" Relationship="Self.FK_KHACH_HANG_QUYEN_TRUY_CAP" FromRole="QUYEN_TRUY_CAP" ToRole="KHACH_HANG" />
-  </EntityType>
-  <EntityType Name="SAN_PHAM">
-    <Key>
-      <PropertyRef Name="MaSP" />
-    </Key>
-    <Property Name="MaSP" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="TenSP" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-    <Property Name="MaLoai" Type="Int32" />
-    <Property Name="MaNCC" Type="Int32" />
-    <Property Name="Mau" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-    <Property Name="BaoHanh" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-    <Property Name="XuatXu" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-    <Property Name="HinhAnh" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="GiaBan" Type="Double" />
-    <Property Name="LuotXem" Type="Int32" />
-    <Property Name="LuotLike" Type="Int32" />
-    <Property Name="GiamGia" Type="Int32" />
-    <NavigationProperty Name="CHI_TIET_HDN" Relationship="Self.FK_CHI_TIET_HDN_SAN_PHAM" FromRole="SAN_PHAM" ToRole="CHI_TIET_HDN" />
-    <NavigationProperty Name="KHOes" Relationship="Self.FK_KHO_SAN_PHAM" FromRole="SAN_PHAM" ToRole="KHO" />
-    <NavigationProperty Name="LOAI_SPHAM" Relationship="Self.FK_SAN_PHAM_LOAI_SPHAM" FromRole="SAN_PHAM" ToRole="LOAI_SPHAM" />
-    <NavigationProperty Name="NHA_CCAP" Relationship="Self.FK_SAN_PHAM_NHA_CCAP" FromRole="SAN_PHAM" ToRole="NHA_CCAP" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
-  <Association Name="FK_CHI_TIET_HDB_HOA_DON_BAN">
-    <End Role="HOA_DON_BAN" Type="Self.HOA_DON_BAN" Multiplicity="1" />
-    <End Role="CHI_TIET_HDB" Type="Self.CHI_TIET_HDB" Multiplicity="*" />
+  <Association Name="FK_Account_UserType">
+    <End Role="UserType" Type="Self.UserType" Multiplicity="1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="HOA_DON_BAN">
-        <PropertyRef Name="MaHDB" />
+      <Principal Role="UserType">
+        <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="CHI_TIET_HDB">
-        <PropertyRef Name="MaHDB" />
+      <Dependent Role="Account">
+        <PropertyRef Name="UserTypeID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_CHI_TIET_HDN_HOA_DON_NHAP">
-    <End Role="HOA_DON_NHAP" Type="Self.HOA_DON_NHAP" Multiplicity="1" />
-    <End Role="CHI_TIET_HDN" Type="Self.CHI_TIET_HDN" Multiplicity="*" />
+  <Association Name="FK_Order_Users">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="HOA_DON_NHAP">
-        <PropertyRef Name="MaHDN" />
+      <Principal Role="Account">
+        <PropertyRef Name="UserName" />
       </Principal>
-      <Dependent Role="CHI_TIET_HDN">
-        <PropertyRef Name="MaHDN" />
+      <Dependent Role="Order">
+        <PropertyRef Name="UserID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_CHI_TIET_HDN_SAN_PHAM">
-    <End Role="SAN_PHAM" Type="Self.SAN_PHAM" Multiplicity="1" />
-    <End Role="CHI_TIET_HDN" Type="Self.CHI_TIET_HDN" Multiplicity="*" />
+  <Association Name="FK_Products_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Product" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="SAN_PHAM">
-        <PropertyRef Name="MaSP" />
+      <Principal Role="Category">
+        <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="CHI_TIET_HDN">
-        <PropertyRef Name="MaSP" />
+      <Dependent Role="Products">
+        <PropertyRef Name="CategoryID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_KHO_CUA_HANG">
-    <End Role="CUA_HANG" Type="Self.CUA_HANG" Multiplicity="1" />
-    <End Role="KHO" Type="Self.KHO" Multiplicity="*" />
+  <Association Name="FK_OderDetail_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="CUA_HANG">
-        <PropertyRef Name="MaCuaHang" />
+      <Principal Role="Order">
+        <PropertyRef Name="OrderID" />
       </Principal>
-      <Dependent Role="KHO">
-        <PropertyRef Name="MaCuaHang" />
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="OrderID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_KHACH_HANG_QUYEN_TRUY_CAP">
-    <End Role="QUYEN_TRUY_CAP" Type="Self.QUYEN_TRUY_CAP" Multiplicity="0..1" />
-    <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="*" />
+  <Association Name="FK_OderDetail_Products">
+    <End Role="Products" Type="Self.Product" Multiplicity="1" />
+    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="QUYEN_TRUY_CAP">
-        <PropertyRef Name="MaQuyen" />
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
       </Principal>
-      <Dependent Role="KHACH_HANG">
-        <PropertyRef Name="Quyen" />
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="ProductID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_KHO_SAN_PHAM">
-    <End Role="SAN_PHAM" Type="Self.SAN_PHAM" Multiplicity="1" />
-    <End Role="KHO" Type="Self.KHO" Multiplicity="*" />
+  <Association Name="FK_OrderImportDetail_OrderImport">
+    <End Role="OrderImport" Type="Self.OrderImport" Multiplicity="1" />
+    <End Role="OrderImportDetail" Type="Self.OrderImportDetail" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="SAN_PHAM">
-        <PropertyRef Name="MaSP" />
+      <Principal Role="OrderImport">
+        <PropertyRef Name="OrderImportID" />
       </Principal>
-      <Dependent Role="KHO">
-        <PropertyRef Name="MaSP" />
+      <Dependent Role="OrderImportDetail">
+        <PropertyRef Name="OrderImportID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_SAN_PHAM_LOAI_SPHAM">
-    <End Role="LOAI_SPHAM" Type="Self.LOAI_SPHAM" Multiplicity="0..1" />
-    <End Role="SAN_PHAM" Type="Self.SAN_PHAM" Multiplicity="*" />
+  <Association Name="FK_OrderImportDetail_Products">
+    <End Role="Products" Type="Self.Product" Multiplicity="1" />
+    <End Role="OrderImportDetail" Type="Self.OrderImportDetail" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="LOAI_SPHAM">
-        <PropertyRef Name="MaLoai" />
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
       </Principal>
-      <Dependent Role="SAN_PHAM">
-        <PropertyRef Name="MaLoai" />
+      <Dependent Role="OrderImportDetail">
+        <PropertyRef Name="ProductID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_SAN_PHAM_NHA_CCAP">
-    <End Role="NHA_CCAP" Type="Self.NHA_CCAP" Multiplicity="0..1" />
-    <End Role="SAN_PHAM" Type="Self.SAN_PHAM" Multiplicity="*" />
+  <Association Name="FK_Storage_Products">
+    <End Role="Products" Type="Self.Product" Multiplicity="1" />
+    <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="NHA_CCAP">
-        <PropertyRef Name="MaNCC" />
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
       </Principal>
-      <Dependent Role="SAN_PHAM">
-        <PropertyRef Name="MaNCC" />
+      <Dependent Role="Storage">
+        <PropertyRef Name="ProductID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="WatchesDatabaseEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="CHI_TIET_HDB" EntityType="Self.CHI_TIET_HDB" />
-    <EntitySet Name="CHI_TIET_HDN" EntityType="Self.CHI_TIET_HDN" />
-    <EntitySet Name="CUA_HANG" EntityType="Self.CUA_HANG" />
-    <EntitySet Name="HOA_DON_BAN" EntityType="Self.HOA_DON_BAN" />
-    <EntitySet Name="HOA_DON_NHAP" EntityType="Self.HOA_DON_NHAP" />
-    <EntitySet Name="KHACH_HANG" EntityType="Self.KHACH_HANG" />
-    <EntitySet Name="KHOes" EntityType="Self.KHO" />
-    <EntitySet Name="LOAI_SPHAM" EntityType="Self.LOAI_SPHAM" />
-    <EntitySet Name="NHA_CCAP" EntityType="Self.NHA_CCAP" />
-    <EntitySet Name="QUYEN_TRUY_CAP" EntityType="Self.QUYEN_TRUY_CAP" />
-    <EntitySet Name="SAN_PHAM" EntityType="Self.SAN_PHAM" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-    <AssociationSet Name="FK_CHI_TIET_HDB_HOA_DON_BAN" Association="Self.FK_CHI_TIET_HDB_HOA_DON_BAN">
-      <End Role="HOA_DON_BAN" EntitySet="HOA_DON_BAN" />
-      <End Role="CHI_TIET_HDB" EntitySet="CHI_TIET_HDB" />
+  <EntityContainer Name="FastFoodEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="Self.Account" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
+    <EntitySet Name="OrderImports" EntityType="Self.OrderImport" />
+    <EntitySet Name="OrderImportDetails" EntityType="Self.OrderImportDetail" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Storages" EntityType="Self.Storage" />
+    <EntitySet Name="UserTypes" EntityType="Self.UserType" />
+    <AssociationSet Name="FK_Account_UserType" Association="Self.FK_Account_UserType">
+      <End Role="UserType" EntitySet="UserTypes" />
+      <End Role="Account" EntitySet="Accounts" />
     </AssociationSet>
-    <AssociationSet Name="FK_CHI_TIET_HDN_HOA_DON_NHAP" Association="Self.FK_CHI_TIET_HDN_HOA_DON_NHAP">
-      <End Role="HOA_DON_NHAP" EntitySet="HOA_DON_NHAP" />
-      <End Role="CHI_TIET_HDN" EntitySet="CHI_TIET_HDN" />
+    <AssociationSet Name="FK_Order_Users" Association="Self.FK_Order_Users">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Order" EntitySet="Orders" />
     </AssociationSet>
-    <AssociationSet Name="FK_CHI_TIET_HDN_SAN_PHAM" Association="Self.FK_CHI_TIET_HDN_SAN_PHAM">
-      <End Role="SAN_PHAM" EntitySet="SAN_PHAM" />
-      <End Role="CHI_TIET_HDN" EntitySet="CHI_TIET_HDN" />
+    <AssociationSet Name="FK_Products_Category" Association="Self.FK_Products_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Products" EntitySet="Products" />
     </AssociationSet>
-    <AssociationSet Name="FK_KHO_CUA_HANG" Association="Self.FK_KHO_CUA_HANG">
-      <End Role="CUA_HANG" EntitySet="CUA_HANG" />
-      <End Role="KHO" EntitySet="KHOes" />
+    <AssociationSet Name="FK_OderDetail_Order" Association="Self.FK_OderDetail_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
     </AssociationSet>
-    <AssociationSet Name="FK_KHACH_HANG_QUYEN_TRUY_CAP" Association="Self.FK_KHACH_HANG_QUYEN_TRUY_CAP">
-      <End Role="QUYEN_TRUY_CAP" EntitySet="QUYEN_TRUY_CAP" />
-      <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+    <AssociationSet Name="FK_OderDetail_Products" Association="Self.FK_OderDetail_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
     </AssociationSet>
-    <AssociationSet Name="FK_KHO_SAN_PHAM" Association="Self.FK_KHO_SAN_PHAM">
-      <End Role="SAN_PHAM" EntitySet="SAN_PHAM" />
-      <End Role="KHO" EntitySet="KHOes" />
+    <AssociationSet Name="FK_OrderImportDetail_OrderImport" Association="Self.FK_OrderImportDetail_OrderImport">
+      <End Role="OrderImport" EntitySet="OrderImports" />
+      <End Role="OrderImportDetail" EntitySet="OrderImportDetails" />
     </AssociationSet>
-    <AssociationSet Name="FK_SAN_PHAM_LOAI_SPHAM" Association="Self.FK_SAN_PHAM_LOAI_SPHAM">
-      <End Role="LOAI_SPHAM" EntitySet="LOAI_SPHAM" />
-      <End Role="SAN_PHAM" EntitySet="SAN_PHAM" />
+    <AssociationSet Name="FK_OrderImportDetail_Products" Association="Self.FK_OrderImportDetail_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="OrderImportDetail" EntitySet="OrderImportDetails" />
     </AssociationSet>
-    <AssociationSet Name="FK_SAN_PHAM_NHA_CCAP" Association="Self.FK_SAN_PHAM_NHA_CCAP">
-      <End Role="NHA_CCAP" EntitySet="NHA_CCAP" />
-      <End Role="SAN_PHAM" EntitySet="SAN_PHAM" />
+    <AssociationSet Name="FK_Storage_Products" Association="Self.FK_Storage_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Storage" EntitySet="Storages" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

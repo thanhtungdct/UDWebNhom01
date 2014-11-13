@@ -15,7 +15,7 @@ namespace WFManagermentFastFood
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Management());
+            Application.Run(new Login());
         }
     }
 }

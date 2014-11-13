@@ -6,11 +6,34 @@ C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WCFServiceFastFood\obj\Debug\
 C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\EntityFramework.dll
 C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\EntityFramework.xml
 C:\Users\Van\Desktop\WebService\WCFServiceFastFood\WCFServiceFastFood\obj\Debug\WCFServiceFastFood.csprojResolveAssemblyReference.cache
-C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\WCFServiceFastFood.dll.config
-C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\WCFServiceFastFood.dll
-C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\WCFServiceFastFood.pdb
-C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\EntityFramework.dll
-C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\EntityFramework.xml
-C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WCFServiceFastFood\WCFServiceFastFood\obj\Debug\WCFServiceFastFood.dll
-C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WCFServiceFastFood\WCFServiceFastFood\obj\Debug\WCFServiceFastFood.pdb
-C:\Users\van\Documents\Visual Studio 2013\Projects\WebService2\WCFServiceFastFood\WCFServiceFastFood\obj\Debug\WCFServiceFastFood.csprojResolveAssemblyReference.cache
+C:\Users\Van\Desktop\Nam_Cuối\WebService\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\WCFServiceFastFood.dll.config
+C:\Users\Van\Desktop\Nam_Cuối\WebService\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\WCFServiceFastFood.dll
+C:\Users\Van\Desktop\Nam_Cuối\WebService\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\WCFServiceFastFood.pdb
+C:\Users\Van\Desktop\Nam_Cuối\WebService\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\EntityFramework.dll
+C:\Users\Van\Desktop\Nam_Cuối\WebService\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\EntityFramework.xml
+C:\Users\Van\Desktop\Nam_Cuối\WebService\WCFServiceFastFood\WCFServiceFastFood\obj\Debug\WCFServiceFastFood.csprojResolveAssemblyReference.cache
+C:\Users\Van\Desktop\Nam_Cuối\WebService\WCFServiceFastFood\WCFServiceFastFood\obj\Debug\WCFServiceFastFood.dll
+C:\Users\Van\Desktop\Nam_Cuối\WebService\WCFServiceFastFood\WCFServiceFastFood\obj\Debug\WCFServiceFastFood.pdb
+C:\Users\Van\Desktop\Nam_Cuoi\WebService\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\WCFServiceFastFood.dll.config
+C:\Users\Van\Desktop\Nam_Cuoi\WebService\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\WCFServiceFastFood.dll
+C:\Users\Van\Desktop\Nam_Cuoi\WebService\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\WCFServiceFastFood.pdb
+C:\Users\Van\Desktop\Nam_Cuoi\WebService\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\EntityFramework.dll
+C:\Users\Van\Desktop\Nam_Cuoi\WebService\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\EntityFramework.xml
+C:\Users\Van\Desktop\Nam_Cuoi\WebService\WCFServiceFastFood\WCFServiceFastFood\obj\Debug\WCFServiceFastFood.dll
+C:\Users\Van\Desktop\Nam_Cuoi\WebService\WCFServiceFastFood\WCFServiceFastFood\obj\Debug\WCFServiceFastFood.pdb
+C:\Users\Van\Desktop\Nam_Cuoi\WebService\WCFServiceFastFood\WCFServiceFastFood\obj\Debug\WCFServiceFastFood.csprojResolveAssemblyReference.cache
+C:\Users\Van\Desktop\Nam_Cuoi\service\ff\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\WCFServiceFastFood.dll.config
+C:\Users\Van\Desktop\Nam_Cuoi\service\ff\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\WCFServiceFastFood.dll
+C:\Users\Van\Desktop\Nam_Cuoi\service\ff\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\WCFServiceFastFood.pdb
+C:\Users\Van\Desktop\Nam_Cuoi\service\ff\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\EntityFramework.dll
+C:\Users\Van\Desktop\Nam_Cuoi\service\ff\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\EntityFramework.xml
+C:\Users\Van\Desktop\Nam_Cuoi\service\ff\WCFServiceFastFood\WCFServiceFastFood\obj\Debug\WCFServiceFastFood.csprojResolveAssemblyReference.cache
+C:\Users\Van\Desktop\Nam_Cuoi\service\ff\WCFServiceFastFood\WCFServiceFastFood\obj\Debug\WCFServiceFastFood.dll
+C:\Users\Van\Desktop\Nam_Cuoi\service\ff\WCFServiceFastFood\WCFServiceFastFood\obj\Debug\WCFServiceFastFood.pdb
+E:\data\Tonghop\ff\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\WCFServiceFastFood.dll.config
+E:\data\Tonghop\ff\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\WCFServiceFastFood.dll
+E:\data\Tonghop\ff\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\WCFServiceFastFood.pdb
+E:\data\Tonghop\ff\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\EntityFramework.dll
+E:\data\Tonghop\ff\WCFServiceFastFood\WCFServiceFastFood\bin\Debug\EntityFramework.xml
+E:\data\Tonghop\ff\WCFServiceFastFood\WCFServiceFastFood\obj\Debug\WCFServiceFastFood.dll
+E:\data\Tonghop\ff\WCFServiceFastFood\WCFServiceFastFood\obj\Debug\WCFServiceFastFood.pdb

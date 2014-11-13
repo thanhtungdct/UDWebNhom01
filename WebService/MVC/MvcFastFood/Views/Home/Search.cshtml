@@ -29,10 +29,32 @@
                         <p>@product.Description</p>
                     </div>
                     <div class="ratings">
-                        <p class="pull-right"><a href="@Url.Action("AddCart", "MyCart", new { productID = @product.ProductID})" onclick="alert('Đã thêm sản phẩm vào giỏ hàng');">Thêm vào giỏ hàng</a> </p>
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                        </p>
+                        @if (product.CategoryID == 2)
+                        {
+                            if (TempData[product.ProductID] != null)
+                            {
+                                <p class="pull-right"><a href="@Url.Action("AddCart", "MyCart", new { productID = @product.ProductID})" onclick="alert('Đã thêm sản phẩm vào giỏ hàng');">Thêm vào giỏ hàng</a> </p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            }
+                            else
+                            {
+                                <p class="pull-right">Hết hàng</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+
+                            }
+                        }
+                        else
+                        {
+                            <p class="pull-right"><a href="@Url.Action("AddCart", "MyCart", new { productID = @product.ProductID})" onclick="alert('Đã thêm sản phẩm vào giỏ hàng');">Thêm vào giỏ hàng</a> </p>
+                            <p>
+                                <span class="glyphicon glyphicon-star"></span>
+                            </p>
+                        }
+
                     </div>
                 </div>
             </div>

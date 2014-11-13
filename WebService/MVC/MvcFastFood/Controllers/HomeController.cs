@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using MvcFastFood.FastFoodSevice;
+
 using PagedList;
 
 namespace MvcFastFood.Controllers
@@ -19,6 +19,18 @@ namespace MvcFastFood.Controllers
             int pageSize = 6;
             int pageNum = (page ?? 1);
             var listpr = db.getAllProduct().ToList();
+            foreach (var s in listpr)
+            {
+                if (s.CategoryID == 2)
+                {
+                    if (db.CheckQuantity(s.ProductID)> 0)
+                    {
+                        TempData[s.ProductID] = "Con";
+                    }
+ 
+                }
+            }
+
             return View(listpr.ToPagedList(pageNum, pageSize));
         }
         public ActionResult Map()
@@ -27,7 +39,18 @@ namespace MvcFastFood.Controllers
         }
         public ActionResult Search(string name)
         {
-            var pro = db.getProductByName(name);
+            var pro = db.getProductByName(name).ToList();
+            foreach (var s in pro)
+            {
+                if (s.CategoryID == 2)
+                {
+                    if (db.CheckQuantity(s.ProductID) > 0)
+                    {
+                        TempData[s.ProductID] = "Con";
+                    }
+
+                }
+            }
             return View(pro);
         }
         public ActionResult getCategory()
@@ -37,13 +60,34 @@ namespace MvcFastFood.Controllers
         }
         public ActionResult getProductByCategory(int categoryID)
         {
+
             var products = db.getProductByCategory(categoryID);
+            if (categoryID == 2)
+            {
+                foreach(var s in products)
+                {
+                   
+                        if (db.CheckQuantity(s.ProductID) > 0)
+                        {
+                            TempData[s.ProductID] = "Con";
+                        }
+
+                }
+            }
             return View(products);
  
         }
         public ActionResult getProductByID(string productID)
         {
             var product = db.getProductByID(productID);
+            if (product.CategoryID == 2)
+            {
+                if (db.CheckQuantity(product.ProductID) > 0)
+                {
+                    TempData[product.ProductID] = "Con";
+                }
+ 
+            }
             return View(product);
         }
 

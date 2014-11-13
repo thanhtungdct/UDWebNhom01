@@ -30,6 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridViewGetAllUser = new System.Windows.Forms.DataGridView();
+            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBoxRole = new System.Windows.Forms.ComboBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
@@ -49,17 +57,18 @@
             this.Email = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userTypeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGetAllUser)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewGetAllUser
@@ -73,13 +82,67 @@
             this.Column3,
             this.Column4,
             this.Column5,
-            this.Column6});
+            this.Column6,
+            this.addressDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.passwordDataGridViewTextBoxColumn,
+            this.phoneDataGridViewTextBoxColumn,
+            this.userNameDataGridViewTextBoxColumn,
+            this.userTypeDataGridViewTextBoxColumn,
+            this.userTypeIDDataGridViewTextBoxColumn});
             this.dataGridViewGetAllUser.DataSource = this.accountBindingSource;
             this.dataGridViewGetAllUser.Location = new System.Drawing.Point(0, 162);
             this.dataGridViewGetAllUser.Name = "dataGridViewGetAllUser";
             this.dataGridViewGetAllUser.Size = new System.Drawing.Size(744, 226);
             this.dataGridViewGetAllUser.TabIndex = 0;
             this.dataGridViewGetAllUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewGetAllUser_CellClick);
+            // 
+            // UserName
+            // 
+            this.UserName.DataPropertyName = "UserName";
+            this.UserName.HeaderText = "Tài khoản";
+            this.UserName.Name = "UserName";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "PassWord";
+            this.Column1.HeaderText = "Mật khẩu";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Address";
+            this.Column2.HeaderText = "Địa chỉ";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Email";
+            this.Column3.HeaderText = "Email";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Name";
+            this.Column4.HeaderText = "Tên";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "UserTypeID";
+            this.Column5.HeaderText = "Quyền truy cập";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "Phone";
+            this.Column6.HeaderText = "Số điện thoại";
+            this.Column6.Name = "Column6";
+            // 
+            // accountBindingSource
+            // 
+            this.accountBindingSource.DataSource = typeof(WFManagermentFastFood.FastFoddService.Account);
             // 
             // panel1
             // 
@@ -260,65 +323,77 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Tên đăng nhập";
             // 
-            // accountBindingSource
+            // addressDataGridViewTextBoxColumn
             // 
-            this.accountBindingSource.DataSource = typeof(WFManagermentFastFood.FastFoddService.Account);
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
             // 
-            // UserName
+            // emailDataGridViewTextBoxColumn
             // 
-            this.UserName.DataPropertyName = "UserName";
-            this.UserName.HeaderText = "Tài khoản";
-            this.UserName.Name = "UserName";
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             // 
-            // Column1
+            // nameDataGridViewTextBoxColumn
             // 
-            this.Column1.DataPropertyName = "PassWord";
-            this.Column1.HeaderText = "Mật khẩu";
-            this.Column1.Name = "Column1";
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
-            // Column2
+            // passwordDataGridViewTextBoxColumn
             // 
-            this.Column2.DataPropertyName = "Address";
-            this.Column2.HeaderText = "Địa chỉ";
-            this.Column2.Name = "Column2";
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
             // 
-            // Column3
+            // phoneDataGridViewTextBoxColumn
             // 
-            this.Column3.DataPropertyName = "Email";
-            this.Column3.HeaderText = "Email";
-            this.Column3.Name = "Column3";
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
             // 
-            // Column4
+            // userNameDataGridViewTextBoxColumn
             // 
-            this.Column4.DataPropertyName = "Name";
-            this.Column4.HeaderText = "Tên";
-            this.Column4.Name = "Column4";
+            this.userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
+            this.userNameDataGridViewTextBoxColumn.HeaderText = "UserName";
+            this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
             // 
-            // Column5
+            // userTypeDataGridViewTextBoxColumn
             // 
-            this.Column5.DataPropertyName = "UserTypeID";
-            this.Column5.HeaderText = "Quyền truy cập";
-            this.Column5.Name = "Column5";
+            this.userTypeDataGridViewTextBoxColumn.DataPropertyName = "UserType";
+            this.userTypeDataGridViewTextBoxColumn.HeaderText = "UserType";
+            this.userTypeDataGridViewTextBoxColumn.Name = "userTypeDataGridViewTextBoxColumn";
             // 
-            // Column6
+            // userTypeIDDataGridViewTextBoxColumn
             // 
-            this.Column6.DataPropertyName = "Phone";
-            this.Column6.HeaderText = "Số điện thoại";
-            this.Column6.Name = "Column6";
+            this.userTypeIDDataGridViewTextBoxColumn.DataPropertyName = "UserTypeID";
+            this.userTypeIDDataGridViewTextBoxColumn.HeaderText = "UserTypeID";
+            this.userTypeIDDataGridViewTextBoxColumn.Name = "userTypeIDDataGridViewTextBoxColumn";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(669, 394);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Đóng";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // ManagementUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 400);
+            this.ClientSize = new System.Drawing.Size(756, 423);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridViewGetAllUser);
             this.Name = "ManagementUser";
             this.Text = "QUẢN LÝ NGƯỜI DÙNG";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGetAllUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -353,5 +428,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.BindingSource accountBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userTypeIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button1;
     }
 }

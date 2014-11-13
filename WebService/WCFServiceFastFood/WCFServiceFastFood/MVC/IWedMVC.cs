@@ -18,13 +18,11 @@ namespace WCFServiceFastFood
         [OperationContract]
         Product getProductByID(string productID);
         [OperationContract]
-        List<Product> search(string productName);
+        List<Product> getProductByName(string productName);
         [OperationContract]
         List<Product> getProductByCategory(int categoryID);
         [OperationContract]
         List<Category> getAllCategory();
-        [OperationContract]
-        List<Product> getProductByName(string name);
         #endregion
 
         #region Login
@@ -44,5 +42,13 @@ namespace WCFServiceFastFood
         [OperationContract]
         bool insertOrderDetail(OrderDetail orderDetai);
         #endregion
+        [OperationContract]
+        bool UpdateProductToStorage(string productID, int quantity);
+
+        [OperationContract]
+        int CheckQuantity(string productID);
+       
+
+
     }
 }

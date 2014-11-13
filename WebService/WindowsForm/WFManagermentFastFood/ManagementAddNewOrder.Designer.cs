@@ -29,15 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
-            this.ProductID1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productName1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.discountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,6 +41,12 @@
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.orderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitPriceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
@@ -53,12 +54,11 @@
             this.btnCreate = new System.Windows.Forms.Button();
             this.txtDel = new System.Windows.Forms.TextBox();
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.orderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitPriceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ProductID1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productName1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
@@ -72,15 +72,15 @@
             // 
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dataGridViewProduct);
-            this.panel1.Location = new System.Drawing.Point(25, 26);
+            this.panel1.Location = new System.Drawing.Point(14, 54);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(543, 232);
+            this.panel1.Size = new System.Drawing.Size(360, 232);
             this.panel1.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(81, 4);
+            this.label2.Location = new System.Drawing.Point(66, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 13);
             this.label2.TabIndex = 2;
@@ -94,45 +94,13 @@
             this.dataGridViewProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProductID1,
             this.productName1,
-            this.discountDataGridViewTextBoxColumn,
-            this.imageDataGridViewImageColumn,
             this.unitPriceDataGridViewTextBoxColumn});
             this.dataGridViewProduct.DataSource = this.productBindingSource;
             this.dataGridViewProduct.Location = new System.Drawing.Point(3, 45);
             this.dataGridViewProduct.Name = "dataGridViewProduct";
-            this.dataGridViewProduct.Size = new System.Drawing.Size(540, 184);
+            this.dataGridViewProduct.Size = new System.Drawing.Size(350, 184);
             this.dataGridViewProduct.TabIndex = 0;
             this.dataGridViewProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProduct_CellClick);
-            // 
-            // ProductID1
-            // 
-            this.ProductID1.DataPropertyName = "ProductID";
-            this.ProductID1.HeaderText = "Mã sản phẩm";
-            this.ProductID1.Name = "ProductID1";
-            // 
-            // productName1
-            // 
-            this.productName1.DataPropertyName = "ProductName";
-            this.productName1.HeaderText = "Tên sản phẩm";
-            this.productName1.Name = "productName1";
-            // 
-            // discountDataGridViewTextBoxColumn
-            // 
-            this.discountDataGridViewTextBoxColumn.DataPropertyName = "Discount";
-            this.discountDataGridViewTextBoxColumn.HeaderText = "Giảm giá";
-            this.discountDataGridViewTextBoxColumn.Name = "discountDataGridViewTextBoxColumn";
-            // 
-            // imageDataGridViewImageColumn
-            // 
-            this.imageDataGridViewImageColumn.DataPropertyName = "Image";
-            this.imageDataGridViewImageColumn.HeaderText = "Hình ảnh";
-            this.imageDataGridViewImageColumn.Name = "imageDataGridViewImageColumn";
-            // 
-            // unitPriceDataGridViewTextBoxColumn
-            // 
-            this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
-            this.unitPriceDataGridViewTextBoxColumn.HeaderText = "Giá";
-            this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
             // 
             // productBindingSource
             // 
@@ -142,7 +110,7 @@
             // 
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.dataGridViewListProduct);
-            this.panel2.Location = new System.Drawing.Point(609, 30);
+            this.panel2.Location = new System.Drawing.Point(437, 52);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(470, 231);
             this.panel2.TabIndex = 1;
@@ -150,7 +118,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(139, 4);
+            this.label1.Location = new System.Drawing.Point(143, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(181, 13);
             this.label1.TabIndex = 1;
@@ -200,69 +168,15 @@
             // 
             // Edit
             // 
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle1.NullValue = "Cập nhật ";
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Lime;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.Edit.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle3.NullValue = "Cập nhật ";
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.Edit.DefaultCellStyle = dataGridViewCellStyle3;
             this.Edit.HeaderText = "Thêm";
             this.Edit.Name = "Edit";
             this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // orderDetailBindingSource
-            // 
-            this.orderDetailBindingSource.DataSource = typeof(WFManagermentFastFood.FastFoddService.OrderDetail);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(574, 129);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(29, 23);
-            this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = ">>";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnDel
-            // 
-            this.btnDel.Location = new System.Drawing.Point(574, 178);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(29, 23);
-            this.btnDel.TabIndex = 3;
-            this.btnDel.Text = "<<";
-            this.btnDel.UseVisualStyleBackColor = true;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(574, 30);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(22, 20);
-            this.txtID.TabIndex = 4;
-            this.txtID.Visible = false;
-            // 
-            // btnCreate
-            // 
-            this.btnCreate.Location = new System.Drawing.Point(609, 334);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(285, 23);
-            this.btnCreate.TabIndex = 0;
-            this.btnCreate.Text = "Thêm hóa đơn";
-            this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
-            // 
-            // txtDel
-            // 
-            this.txtDel.Location = new System.Drawing.Point(574, 71);
-            this.txtDel.Name = "txtDel";
-            this.txtDel.Size = new System.Drawing.Size(22, 20);
-            this.txtDel.TabIndex = 6;
-            this.txtDel.Visible = false;
-            // 
-            // orderBindingSource
-            // 
-            this.orderBindingSource.DataSource = typeof(WFManagermentFastFood.FastFoddService.Order);
             // 
             // orderDataGridViewTextBoxColumn
             // 
@@ -300,11 +214,106 @@
             this.unitPriceDataGridViewTextBoxColumn1.HeaderText = "UnitPrice";
             this.unitPriceDataGridViewTextBoxColumn1.Name = "unitPriceDataGridViewTextBoxColumn1";
             // 
+            // orderDetailBindingSource
+            // 
+            this.orderDetailBindingSource.DataSource = typeof(WFManagermentFastFood.FastFoddService.OrderDetail);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(392, 152);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(29, 23);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.Text = ">>";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.Location = new System.Drawing.Point(392, 201);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(29, 23);
+            this.btnDel.TabIndex = 3;
+            this.btnDel.Text = "<<";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(392, 53);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(22, 20);
+            this.txtID.TabIndex = 4;
+            this.txtID.Visible = false;
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.Location = new System.Drawing.Point(693, 306);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(97, 23);
+            this.btnCreate.TabIndex = 0;
+            this.btnCreate.Text = "Thêm hóa đơn";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
+            // txtDel
+            // 
+            this.txtDel.Location = new System.Drawing.Point(392, 94);
+            this.txtDel.Name = "txtDel";
+            this.txtDel.Size = new System.Drawing.Size(22, 20);
+            this.txtDel.TabIndex = 6;
+            this.txtDel.Visible = false;
+            // 
+            // orderBindingSource
+            // 
+            this.orderBindingSource.DataSource = typeof(WFManagermentFastFood.FastFoddService.Order);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(811, 306);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Đóng";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Blue;
+            this.label3.Location = new System.Drawing.Point(355, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(144, 20);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "THÊM HÓA ĐƠN";
+            // 
+            // ProductID1
+            // 
+            this.ProductID1.DataPropertyName = "ProductID";
+            this.ProductID1.HeaderText = "Mã sản phẩm";
+            this.ProductID1.Name = "ProductID1";
+            // 
+            // productName1
+            // 
+            this.productName1.DataPropertyName = "ProductName";
+            this.productName1.HeaderText = "Tên sản phẩm";
+            this.productName1.Name = "productName1";
+            // 
+            // unitPriceDataGridViewTextBoxColumn
+            // 
+            this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
+            this.unitPriceDataGridViewTextBoxColumn.HeaderText = "Giá";
+            this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
+            // 
             // ManagementAddNewOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1079, 387);
+            this.ClientSize = new System.Drawing.Size(901, 352);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.txtDel);
             this.Controls.Add(this.txtID);
@@ -313,7 +322,6 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ManagementAddNewOrder";
-            this.Text = "THÊM HÓA ĐƠN";
             this.Load += new System.EventHandler(this.ManagementAddNewOrderForm1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -342,11 +350,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.TextBox txtDel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductID1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productName1;
         private System.Windows.Forms.DataGridViewTextBoxColumn discountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn imageDataGridViewImageColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource productBindingSource;
         private System.Windows.Forms.BindingSource orderDetailBindingSource;
         private System.Windows.Forms.BindingSource orderBindingSource;
@@ -360,5 +364,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductID1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productName1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
     }
 }
